@@ -8,9 +8,7 @@ This application is a social media application focused on users sharing their ph
 
 Customers can purchase from a range of categories to shop from while sellers can create an account which can include B2B and B2C with B2C being public.
 
-Link to deployed site: TBD
-
-#
+Link to deployed site: `TBD`
 
 ##### MVP
 
@@ -24,13 +22,12 @@ Link to deployed site: TBD
 -
 -
 
-#
-
 ---
 
 ### Wireframes
 
 ### Component heirarchy
+
 
 ![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/Component%20Hierarchy.jpeg)
 
@@ -59,10 +56,10 @@ Link to deployed site: TBD
      My Faves        | H        | 3hrs              | TBD hrs
      Product List    | H        | 3hrs              | TBD hrs
      404 Page        | H        | 1hrs              | TBD hrs
-     Total Component-| H -------| 24hrs-------------| TBD hrs
+     Total Component | H -------| 24hrs-------------| TBD hrs
      CSS             | H        | 8hrs              | TBD hrs
      UAT & Fixes     | H        | 8hrs              | TBD hrs
-     Grand Total    -| H -------| 40hrs-------------| 5hrs
+     Grand Total     | H -------| 40hrs-------------| TBD hrs
 #
 
 ---
