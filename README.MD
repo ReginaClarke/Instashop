@@ -48,7 +48,7 @@ Link to deployed site: TBD
      Component  ---  | Priority | Estimated Time    | Actual Time
      Home            | H        | 1hrs              | TBD hrs
      Header          | H        | .5hrs             | TBD hrs
-     Footer          | H        | 5hrs              | TBD hrs
+     Footer          | H        | .5hrs              | TBD hrs
      Sign-in         | H        | 1hrs              | TBD hrs
      Sign-up         | H        | 1hrs              | TBD hrs
      User Timeline   | H        | 3hrs              | TBD hrs
@@ -59,8 +59,10 @@ Link to deployed site: TBD
      My Faves        | H        | 3hrs              | TBD hrs
      Product List    | H        | 3hrs              | TBD hrs
      404 Page        | H        | 1hrs              | TBD hrs
-     Total-----------|H --------| 28.5hrs-----------| 5hrs
-
+     Total Component-| H -------| 24hrs-----------| TBD hrs
+     CSS             | H        | 8hrs              | TBD hrs
+     UAT & Fixes     | H        | 8hrs              | TBD hrs
+     Grand Total    -| H -------| 40hrs-----------| 5hrs
 #
 
 ---
