@@ -15,17 +15,20 @@ Link to deployed site: `TBD`
 - Create users and relationships (B2B relationships)
 - Lead customer to checkout
 - Create a visually appealing website that keeps the user in the application longer
+- User, Post, Comments Entities
 
 ##### Post-MVP
 
 - Improve Mobile view to align with competition quality. This will be additional styling.
 - Embedding shopping experience within the app
--
+- Add Favorites
+- Add Followers
 
 ---
 
 ### Wireframes
-Prototype:  https://xd.adobe.com/view/b099dd13-b52a-4fda-508b-f485c6b2e106-c6a8/?fullscreen&hints=off
+
+Prototype: https://xd.adobe.com/view/b099dd13-b52a-4fda-508b-f485c6b2e106-c6a8/?fullscreen&hints=off
 
 ![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/InstaShop-Wireframe.png)
 
@@ -40,6 +43,7 @@ Prototype:  https://xd.adobe.com/view/b099dd13-b52a-4fda-508b-f485c6b2e106-c6a8/
 ### Entity Relationship Diagram
 
 `https://www.lucidchart.com/invitations/accept/deef5d80-fc56-4749-a24a-c58a9132ca93`
+
 ![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/Entity%20Relationship%20Diagram%20-%20Instashop.png)
 
 #
