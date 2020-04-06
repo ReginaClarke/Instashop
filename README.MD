@@ -19,15 +19,20 @@ Link to deployed site: `TBD`
 ##### Post-MVP
 
 - Improve Mobile view to align with competition quality. This will be additional styling.
--
+- Embedding shopping experience within the app
 -
 
 ---
 
 ### Wireframes
 
-### Component heirarchy
+`https://xd.adobe.com/view/b099dd13-b52a-4fda-508b-f485c6b2e106-c6a8/?fullscreen&hints=off`
 
+![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/InstaShop-Wireframe.png)
+
+#
+
+### Component heirarchy
 
 ![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/Component%20Hierarchy.jpeg)
 
@@ -60,6 +65,7 @@ Link to deployed site: `TBD`
      CSS             | H        | 8hrs              | TBD hrs
      UAT & Fixes     | H        | 8hrs              | TBD hrs
      Grand Total     | H -------| 40hrs-------------| TBD hrs
+
 #
 
 ---
@@ -82,21 +88,23 @@ My plan of action to overcome this is to scale back where necessary to ensure my
 
 ---
 
----
+# WORK IN PROGRESS
 
----
+### Installation instructions
 
-### You will need the following in your README when you submit your final product (due 4/14)
+(is this for the user or for the technical person?)
 
-- Installation instructions (is this for the user or for the technical person?)
+### Helper Functions
 
-- Helper Functions - Helper functions should be generic enough that they can be reused in other applications
+Helper functions should be generic enough that they can be reused in other applications
 
       	| Function | Description |
       	| --- | :---: |
       	| Capitalize | This will capitalize the first letter in a string of text |
 
-- Code - Include a brief code snippet of functionality that you are proud of an a brief description
+### Code
+
+Include a brief code snippet of functionality that you are proud of an a brief description
 
       	```
       	function reverse(string) {
@@ -104,4 +112,6 @@ My plan of action to overcome this is to scale back where necessary to ensure my
       	}
       	```
 
-- Issues and Resolutions - Use this section to list of all major issues encountered and their resolution
+### Issues and Resolutions
+
+Use this section to list of all major issues encountered and their resolution
