@@ -35,14 +35,15 @@ Link to deployed site: TBD
 #
 #
 ### Entity Relationship Diagram
-![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/Entity%20Relationship%20Diagram%20-%20Instashop.png)
 `https://www.lucidchart.com/invitations/accept/deef5d80-fc56-4749-a24a-c58a9132ca93`
+![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/Entity%20Relationship%20Diagram%20-%20Instashop.png)
+
 
 
 
 	 Component  ---  | Priority | Estimated Time    | Actual Time 
 	 Home            | H        | 1hrs              | TBD hrs  
-	 Header          | H        | .5hrs              | TBD hrs  
+	 Header          | H        | .5hrs             | TBD hrs  
 	 Footer          | H        | 5hrs              | TBD hrs 
 	 Sign-in         | H        | 1hrs              | TBD hrs 
 	 Sign-up         | H        | 1hrs              | TBD hrs 
@@ -54,7 +55,7 @@ Link to deployed site: TBD
      My Faves        | H        | 3hrs              | TBD hrs  
 	 Product List    | H        | 3hrs              | TBD hrs 
 	 404 Page        | H        | 1hrs              | TBD hrs 
-	 Total-----------|H --------| 28.5hrs--------------| 5hrs
+	 Total-----------|H --------| 28.5hrs-----------| 5hrs
 
 #
 #
