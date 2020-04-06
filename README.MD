@@ -41,6 +41,10 @@ Link to deployed site: TBD
 `https://www.lucidchart.com/invitations/accept/deef5d80-fc56-4749-a24a-c58a9132ca93`
 ![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/Entity%20Relationship%20Diagram%20-%20Instashop.png)
 
+#
+
+### Estimating Time for Completion
+
      Component  ---  | Priority | Estimated Time    | Actual Time
      Home            | H        | 1hrs              | TBD hrs
      Header          | H        | .5hrs             | TBD hrs
