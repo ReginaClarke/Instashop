@@ -25,8 +25,7 @@ Link to deployed site: `TBD`
 ---
 
 ### Wireframes
-
-`https://xd.adobe.com/view/b099dd13-b52a-4fda-508b-f485c6b2e106-c6a8/?fullscreen&hints=off`
+Prototype:  https://xd.adobe.com/view/b099dd13-b52a-4fda-508b-f485c6b2e106-c6a8/?fullscreen&hints=off
 
 ![ERD](https://github.com/ReginaClarke/Instashop/blob/master/Media/InstaShop-Wireframe.png)
 
