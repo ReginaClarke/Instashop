@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users.frontend_data
+    render json: @users #need to hide password digest
   end
 
   # GET /users/1
