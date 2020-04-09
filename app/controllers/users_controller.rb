@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users.frontend_data
   end
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user.frontend_data
   end
 
   # POST /users
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     if @user.save
       @token = encode({ user_id: @user.id });  #username was here; this goes into payload
-      render json: { user: @user, token: @token }, status: :created, location: @user
+      render json: { user: @user.frontend_data, token: @token }, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
