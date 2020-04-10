@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000"; //will need to update this to  heroku or another service upon deployment.
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://instashop-heroku.herokuapp.com/"
+    : "http://localhost:3000"; //will need to update this to  heroku or another service upon deployment.
 
 const api = axios.create({
   baseURL: baseUrl,
