@@ -114,8 +114,12 @@ class Container extends Component {
   };
 
   handleLogin = async () => {
-    const currentUser = await loginUser(this.state.authFormData);
+    const currentUser = await loginUser({
+      username: this.state.authFormData.username,
+      password: this.state.authFormData.password,
+    });
     this.setState({ currentUser });
+    this.props.history.push("/explore")
   };
 
   handleRegister = async (e) => {
