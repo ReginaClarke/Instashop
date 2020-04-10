@@ -95,6 +95,28 @@ My plan of action to overcome this is to scale back where necessary to ensure my
 
 ### Installation instructions
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
 (is this for the user or for the technical person?)
 
 ### Helper Functions
