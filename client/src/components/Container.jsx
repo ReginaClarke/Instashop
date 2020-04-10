@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
-import PostsView from "./PostsView";
-import PostPage from "./PostPage";
-import CreatePost from "./CreatePost";
-import Login from "./Login";
-import Register from "./Register";
-// import LandingPage from "./LandingPage";
+import PostsView from "./shared/PostsView";
+import PostPage from "./shared/PostPage";
+import CreatePost from "./shared/CreatePost";
+import Login from "./shared/Login";
+import Register from "./shared/Register";
+import LandingPage from "./shared/LandingPage";
+import Header from "./shared/Header";
 import {
   createPost,
   readAllPosts,
@@ -143,72 +144,76 @@ class Container extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Route exact path="/">
+        <Route exact path="/">
           <LandingPage />
-        </Route> */}
+        </Route>
 
-        <Route
-          exact
-          path="/login"
-          render={() => (
-            <Login
-              handleLogin={this.handleLogin}
-              handleChange={this.authHandleChange}
-              formData={this.state.authFormData}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/register"
-          render={() => (
-            <Register
-              handleRegister={this.handleRegister}
-              handleChange={this.authHandleChange}
-              formData={this.state.authFormData}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/posts"
-          render={() => (
-            <PostsView
-              posts={this.state.posts}
-              postForm={this.state.postForm}
-              handleFormChange={this.handleFormChange}
-              newPost={this.newPost}
-            />
-          )}
-        />
-        <Route
-          path="/new/post"
-          render={() => (
-            <CreatePost
-              handleFormChange={this.handleFormChange}
-              postForm={this.state.postForm}
-              newPost={this.newPost}
-            />
-          )}
-        />
-        <Route
-          path="/posts/:id"
-          render={(props) => {
-            const { id } = props.match.params;
-            const post = this.state.posts.find((el) => el.id === parseInt(id));
-            return (
-              <PostPage
-                id={id}
-                post={post}
-                handleFormChange={this.handleFormChange}
-                mountEditForm={this.mountEditForm}
-                editPost={this.editPost}
-                postForm={this.state.postForm}
-                deletePost={this.deletePost}
+        <Switch>
+          <Route
+            exact
+            path="/login"
+            render={() => (
+              <Login
+                handleLogin={this.handleLogin}
+                handleChange={this.authHandleChange}
+                formData={this.state.authFormData}
               />
-            );
-          }}
-        />
+            )}
+          />
+          <Route
+            exact
+            path="/register"
+            render={() => (
+              <Register
+                handleRegister={this.handleRegister}
+                handleChange={this.authHandleChange}
+                formData={this.state.authFormData}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/posts"
+            render={() => (
+              <PostsView
+                posts={this.state.posts}
+                postForm={this.state.postForm}
+                handleFormChange={this.handleFormChange}
+                newPost={this.newPost}
+              />
+            )}
+          />
+          <Route
+            path="/new/post"
+            render={() => (
+              <CreatePost
+                handleFormChange={this.handleFormChange}
+                postForm={this.state.postForm}
+                newPost={this.newPost}
+              />
+            )}
+          />
+          <Route
+            path="/posts/:id"
+            render={(props) => {
+              const { id } = props.match.params;
+              const post = this.state.posts.find(
+                (el) => el.id === parseInt(id)
+              );
+              return (
+                <PostPage
+                  id={id}
+                  post={post}
+                  handleFormChange={this.handleFormChange}
+                  mountEditForm={this.mountEditForm}
+                  editPost={this.editPost}
+                  postForm={this.state.postForm}
+                  deletePost={this.deletePost}
+                />
+              );
+            }}
+          />
+        </Switch>
       </div>
     );
   }

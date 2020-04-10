@@ -1,11 +1,11 @@
 import React from "react";
-// import Navigation from "./components/Navigation";
-
+import Navigation from "./Navigation";
 
 const Header = () => (
   <header>
     <h1>Instashop</h1>
-    {/* <Navigation /> */}
+    <Navigation />
+    <hr />
   </header>
 );
 

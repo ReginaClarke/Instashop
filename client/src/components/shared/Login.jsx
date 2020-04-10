@@ -5,15 +5,13 @@ import { Link } from "react-router-dom";
 const Login = (props) => {
   return (
     <div className="auth-container">
-      <h2>Sign In</h2>
-      <hr />
+      {/* <h2>Sign In</h2> */}
       <form
         onSubmit={(e) => {
           e.preventDefault();
           props.handleLogin();
         }}
       >
-        <p>Username:</p>
         <input
           name="username"
           placeholder="Enter Username"
@@ -21,8 +19,7 @@ const Login = (props) => {
           value={props.formData.username}
           onChange={props.handleChange}
         />
-
-        <p>Password:</p>
+        <br />
         <input
           name="password"
           placeholder="Enter Password"
@@ -30,10 +27,12 @@ const Login = (props) => {
           value={props.formData.password}
           onChange={props.handleChange}
         />
-        <hr />
+        <br />
         <button>Login</button>
-        <br/>
-        <Link to="/Register">Create Account</Link>
+        <br />
+        <p>Don't have an account? 
+        <Link className="hyperlinks" to="/Register"> Sign Up</Link>
+        </p>
       </form>
     </div>
   );

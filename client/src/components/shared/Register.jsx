@@ -4,10 +4,7 @@ import React from "react";
 const Register = (props) => {
   return (
     <div className="auth-container">
-      <h2>Register a New Account</h2>
-      <hr />
       <form onSubmit={props.handleRegister}>
-        <p>Username:</p>
         <input
           name="username"
           placeholder="Create Username"
@@ -16,7 +13,6 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
 
-        <p>Password:</p>
         <input
           name="password"
           placeholder="Create Password"
@@ -25,7 +21,6 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
 
-        <p>Email:</p>
         <input
           name="email"
           placeholder="Enter Email"
@@ -34,7 +29,6 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
 
-        <p>First Name:</p>
         <input
           name="first_name"
           placeholder="Enter First Name"
@@ -43,7 +37,6 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
 
-        <p>Last Name:</p>
         <input
           name="last_name"
           placeholder="Enter Last Name"
@@ -52,32 +45,30 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
 
-        <p>Account Type:</p>
         <select
           onChange={props.handleChange}
           name="user_type"
           type="text"
           value={props.formData.user_type}
         >
-          <option value="">Enter Account Type</option>
-          <option value="personal">Personal</option>
-          <option value="business">Business</option>
+          <option className="selector" value="">Enter Account Type</option>
+          <option className="selector" value="personal">Personal</option>
+          <option className="selector" value="business">Business</option>
         </select>
 
-        
-        <p>B2B or B2C:</p>
+        <h2>Below is Required for Business Users</h2>
+
         <select
           onChange={props.handleChange}
           name="user_type"
           type="text"
           value={props.formData.b2b_b2c_c2c}
         >
-          <option value="">Select B2B or B2C</option>
-          <option value="personal">B2B</option>
-          <option value="personal">B2C</option>
+          <option className="selector" value="">Select B2B or B2C</option>
+          <option className="selector" value="personal">B2B</option>
+          <option className="selector" value="personal">B2C</option>
         </select>
 
-        <p>Industry:</p>
         <input
           name="industry"
           placeholder="Enter Industry"
@@ -86,7 +77,6 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
 
-        <p>Business Website:</p>
         <input
           name="business_website"
           placeholder="Enter Business Website"
