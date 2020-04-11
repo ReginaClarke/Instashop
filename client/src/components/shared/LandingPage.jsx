@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 export default function LandingPage() {
   return (
     <>
-      <h1 className="homepageh1">Instashop</h1>
-      <hr />
+      {/* <h1 className="homepageh1">Instashop</h1>
+      <hr /> */}
 
       <div className="homepage">
         <div className="landingpageleft">
-          <img src="/images/homepage.png" alt="user example" />
+          <img className='landingpageimg' src="/images/homepage.png" alt="user example" />
         </div>
 
         <div className="landingpageright">
-          <h3>Shop the look and get a second opinion from friends.</h3>
+          <h4>Shop the look and get a second opinion from friends.</h4>
           <Link to="/login">
             <button className="landingpagebutton">SIGN IN</button>
           </Link>

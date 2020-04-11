@@ -4,19 +4,19 @@ import { withRouter } from "react-router-dom";
 function CreatePost(props) {
   return (
     <div className="create-form">
-      <h2>Create Post</h2>
+      <h3 className="createposth3">Create Post</h3>
       <form onSubmit={props.newPost}>
-        <p>Caption:</p>
-        <input
+        <textarea
           type="text"
+          placeholder="Enter Post Caption"
           name="caption"
           value={props.postForm.caption}
           onChange={props.handleFormChange}
         />
 
-        <p>Link to Product:</p>
         <input
           type="text"
+          placeholder="Enter Link to Product"
           name="link_to_product"
           value={props.postForm.link_to_product}
           onChange={props.handleFormChange}

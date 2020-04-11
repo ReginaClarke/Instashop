@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EditPost from "./EditPost";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { withRouter } from "react-router";
 
 class PostsPage extends Component {
@@ -26,7 +26,7 @@ class PostsPage extends Component {
             <img alt={post.name} src={post.photo} />
             {this.state.isEdit ? (
               <Route
-                path={"/posts/:id/edit"}
+                path={"/myposts/:id/edit"}
                 render={() => (
                   <EditPost
                     handleFormChange={this.props.handleFormChange}
@@ -35,7 +35,7 @@ class PostsPage extends Component {
                       this.props.editPost();
                       this.setState({ isEdit: false });
                       this.props.history.push(
-                        `/posts/${this.props.postForm.id}`
+                        `/myposts/${this.props.postForm.id}`
                       );
                     }}
                     postForm={this.props.postForm}
@@ -44,13 +44,14 @@ class PostsPage extends Component {
               />
             ) : (
               <>
-                <h1>{post.name}</h1>
+                <h3>{post.caption}</h3>
+                <p>{post.link_to_product}</p>
                 <button
                   onClick={() => {
                     this.setState({
                       isEdit: true,
                     });
-                    this.props.history.push(`/posts/${post.id}/edit`);
+                    this.props.history.push(`/myposts/${post.id}/edit`);
                   }}
                 >
                   Edit
@@ -63,6 +64,9 @@ class PostsPage extends Component {
                 >
                   Delete
                 </button>
+                <Link to="/posts">
+                  <button>Cancel</button>
+                </Link>
               </>
             )}
           </div>

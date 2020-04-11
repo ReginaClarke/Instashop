@@ -7,7 +7,6 @@ import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
 import LandingPage from "./shared/LandingPage";
-import Header from "./shared/Header";
 import {
   createPost,
   readAllPosts,
@@ -119,7 +118,7 @@ class Container extends Component {
       password: this.state.authFormData.password,
     });
     this.setState({ currentUser });
-    this.props.history.push("/explore")
+    this.props.history.push("/explore");
   };
 
   handleRegister = async (e) => {
@@ -175,9 +174,10 @@ class Container extends Component {
               />
             )}
           />
+
           <Route
             exact
-            path="/posts"
+            path="/explorer"
             render={() => (
               <PostsView
                 posts={this.state.posts}
@@ -188,7 +188,7 @@ class Container extends Component {
             )}
           />
           <Route
-            path="/new/post"
+            path="/create/mypost"
             render={() => (
               <CreatePost
                 handleFormChange={this.handleFormChange}
@@ -198,7 +198,7 @@ class Container extends Component {
             )}
           />
           <Route
-            path="/posts/:id"
+            path="/myposts/:id"
             render={(props) => {
               const { id } = props.match.params;
               const post = this.state.posts.find(
