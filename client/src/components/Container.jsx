@@ -6,7 +6,6 @@ import PostPage from "./shared/PostPage";
 import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
-import LandingPage from "./shared/LandingPage";
 import {
   createPost,
   readAllPosts,
@@ -147,9 +146,6 @@ class Container extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path="/">
-          <LandingPage />
-        </Route>
 
         <Switch>
           <Route
