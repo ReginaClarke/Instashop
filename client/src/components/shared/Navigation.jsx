@@ -17,7 +17,7 @@ const Navigation = () => (
         <NavLink className="nav" to="/explorer">
           Search
         </NavLink>
-        <NavLink className="nav" to="/login">
+        <NavLink className="nav" to="/">
           Sign Out
         </NavLink>
       </nav>

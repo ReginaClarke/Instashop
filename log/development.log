@@ -11700,3 +11700,1320 @@ Processing by AuthenticationController#verify as HTML
 Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 948)
 
 
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:12:49 -0400
+Started GET "/posts" for ::1 at 2020-04-13 11:12:49 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (14.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 44ms (Views: 3.6ms | ActiveRecord: 7.1ms | Allocations: 8089)
+
+
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 60ms (Views: 0.3ms | ActiveRecord: 17.4ms | Allocations: 16223)
+
+
+Started POST "/posts" for ::1 at 2020-04-13 11:14:20 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"fgsdfgsdfgsdfd", "link_to_product"=>"www.fashionpic.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[36mPost Create (6.5ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "link_to_product", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["caption", "fgsdfgsdfgsdfd"], ["link_to_product", "www.fashionpic.com"], ["created_at", "2020-04-13 15:14:20.856046"], ["updated_at", "2020-04-13 15:14:20.856046"]]
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 14.9ms | Allocations: 17317)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" violates not-null constraint
+DETAIL:  Failing row contains (1, fgsdfgsdfgsdfd, www.fashionpic.com, 2020-04-13 15:14:20.856046, 2020-04-13 15:14:20.856046, null).
+):
+  
+app/controllers/posts_controller.rb:21:in `create'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8606.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Instashop_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (109.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Instashop_development"[0m
+  [1m[35m (77.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Instashop_test"[0m
+  [1m[35m (285.4ms)[0m  [1m[35mCREATE DATABASE "Instashop_development" ENCODING = 'unicode'[0m
+  [1m[35m (94.4ms)[0m  [1m[35mCREATE DATABASE "Instashop_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "caption" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_posts" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "comments_posts" ("post_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_users" CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "comments_users" ("user_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "caption" text, "link_to_product" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts_users" CASCADE[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "posts_users" ("user_id" bigint NOT NULL, "post_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "industry" character varying, "business_website" character varying, "first_name" character varying, "last_name" character varying, "b2b_b2c_c2c" character varying, "user_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200409173350)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200408182928),
+(20200409160335),
+(20200409161504),
+(20200409171035),
+(20200409173240),
+(20200409173313);
+
+[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-13 15:27:44.330414"], ["updated_at", "2020-04-13 15:27:44.330414"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "eb637adfb94cce192f6dc219ad287c627bbd5e7f"], ["created_at", "2020-04-13 15:27:44.340309"], ["updated_at", "2020-04-13 15:27:44.340309"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "caption" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_posts" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "comments_posts" ("post_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_users" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "comments_users" ("user_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "caption" text, "link_to_product" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts_users" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "posts_users" ("user_id" bigint NOT NULL, "post_id" bigint NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "industry" character varying, "business_website" character varying, "first_name" character varying, "last_name" character varying, "b2b_b2c_c2c" character varying, "user_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200409173350)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200408182928),
+(20200409160335),
+(20200409161504),
+(20200409171035),
+(20200409173240),
+(20200409173313);
+
+[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-13 15:27:44.515816"], ["updated_at", "2020-04-13 15:27:44.515816"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-13 15:27:44.523870"], ["key", "environment"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "eb637adfb94cce192f6dc219ad287c627bbd5e7f"], ["created_at", "2020-04-13 15:27:44.532493"], ["updated_at", "2020-04-13 15:27:44.532493"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:33:16 -0400
+Started GET "/posts" for ::1 at 2020-04-13 11:33:16 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 3.4ms | ActiveRecord: 4.5ms | Allocations: 3187)
+
+
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 78ms (Views: 0.2ms | ActiveRecord: 61.9ms | Allocations: 9347)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 11:35:31 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:35:31 -0400
+  [1m[35m (70.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 8.4ms | ActiveRecord: 15.1ms | Allocations: 4469)
+
+
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 63ms (Views: 0.3ms | ActiveRecord: 32.5ms | Allocations: 9239)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 11:36:10 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.0ms | Allocations: 844)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:36:10 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 766)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 11:36:27 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:36:27 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 2.2ms | Allocations: 861)
+
+
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 25ms (Views: 0.3ms | ActiveRecord: 12.9ms | Allocations: 2415)
+
+
+Started POST "/auth/login" for ::1 at 2020-04-13 11:37:07 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 1325)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/users" for ::1 at 2020-04-13 11:37:52 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"www.123.com", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "industry", "business_website", "first_name", "last_name", "user_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "ReginaClarke"], ["email", "Regina.R.Clarke@gmail.com"], ["password_digest", "$2a$12$zxNc2Q9FdWjjDOPRZwG3l.6BVVW1/itExq/sMkVMXH/LPbfT8lFuq"], ["industry", "Fashion"], ["business_website", "www.123.com"], ["first_name", "Regina"], ["last_name", "Clarke"], ["user_type", "personal"], ["created_at", "2020-04-13 15:37:53.155364"], ["updated_at", "2020-04-13 15:37:53.155364"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 201 Created in 292ms (Views: 0.9ms | ActiveRecord: 5.7ms | Allocations: 12550)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 11:40:16 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:40:16 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (78.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 82ms (Views: 0.6ms | ActiveRecord: 78.4ms | Allocations: 957)
+
+
+  [1m[36mPost Load (89.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 94ms (Views: 3.5ms | ActiveRecord: 89.2ms | Allocations: 2518)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 11:40:19 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:40:19 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (22.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 2.5ms | ActiveRecord: 22.9ms | Allocations: 980)
+
+
+  [1m[36mUser Load (196.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 222ms (Views: 0.5ms | ActiveRecord: 196.6ms | Allocations: 1910)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8336.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Instashop_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (103.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Instashop_development"[0m
+  [1m[35m (104.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Instashop_test"[0m
+  [1m[35m (316.3ms)[0m  [1m[35mCREATE DATABASE "Instashop_development" ENCODING = 'unicode'[0m
+  [1m[35m (127.1ms)[0m  [1m[35mCREATE DATABASE "Instashop_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "caption" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_posts" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "comments_posts" ("post_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_users" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "comments_users" ("user_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "caption" text, "link_to_product" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts_users" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "posts_users" ("user_id" bigint NOT NULL, "post_id" bigint NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "industry" character varying, "business_website" character varying, "first_name" character varying, "last_name" character varying, "b2b_b2c_c2c" character varying, "user_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200409173350)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200408182928),
+(20200409160335),
+(20200409161504),
+(20200409171035),
+(20200409173240),
+(20200409173313);
+
+[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-13 15:41:00.020141"], ["updated_at", "2020-04-13 15:41:00.020141"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "eb637adfb94cce192f6dc219ad287c627bbd5e7f"], ["created_at", "2020-04-13 15:41:00.032801"], ["updated_at", "2020-04-13 15:41:00.032801"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "caption" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_posts" CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "comments_posts" ("post_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments_users" CASCADE[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "comments_users" ("user_id" bigint NOT NULL, "comment_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "caption" text, "link_to_product" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts_users" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "posts_users" ("user_id" bigint NOT NULL, "post_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "industry" character varying, "business_website" character varying, "first_name" character varying, "last_name" character varying, "b2b_b2c_c2c" character varying, "user_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200409173350)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200408182928),
+(20200409160335),
+(20200409161504),
+(20200409171035),
+(20200409173240),
+(20200409173313);
+
+[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-13 15:41:00.204540"], ["updated_at", "2020-04-13 15:41:00.204540"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-13 15:41:00.212792"], ["key", "environment"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "eb637adfb94cce192f6dc219ad287c627bbd5e7f"], ["created_at", "2020-04-13 15:41:00.219892"], ["updated_at", "2020-04-13 15:41:00.219892"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/posts" for ::1 at 2020-04-13 11:44:38 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"lj;lj;lkjdfl;aksd", "link_to_product"=>"www.rando.com"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 37ms (Views: 0.3ms | ActiveRecord: 16.5ms | Allocations: 3953)
+
+
+Started POST "/posts" for ::1 at 2020-04-13 11:47:03 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"lj;lj;lkjdfl;aksd", "link_to_product"=>"www.rando.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 4.8ms | Allocations: 3357)
+
+
+Started POST "/posts" for ::1 at 2020-04-13 11:48:36 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"lj;lj;lkjdfl;aksd", "link_to_product"=>"www.rando.com"}}
+Completed 404 Not Found in 5ms (ActiveRecord: 3.9ms | Allocations: 672)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started GET "/posts" for ::1 at 2020-04-13 11:55:28 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 11:55:28 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 958)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 37ms (Views: 0.5ms | ActiveRecord: 24.8ms | Allocations: 5410)
+
+
+Started POST "/auth/login" for ::1 at 2020-04-13 11:55:39 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 1322)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-04-13 11:55:47 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1154)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/posts" for ::1 at 2020-04-13 11:58:59 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"adfadsfasd", "link_to_product"=>"www.rando.com"}}
+Completed 404 Not Found in 8ms (ActiveRecord: 6.4ms | Allocations: 707)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started GET "/posts" for ::1 at 2020-04-13 12:00:28 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:00:28 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (24.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 2.1ms | ActiveRecord: 24.6ms | Allocations: 4712)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 35ms (Views: 0.3ms | ActiveRecord: 23.5ms | Allocations: 4242)
+
+
+Started POST "/auth/login" for ::1 at 2020-04-13 12:00:40 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1299)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started GET "/posts" for ::1 at 2020-04-13 12:01:31 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:01:31 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (35.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 2.3ms | ActiveRecord: 35.7ms | Allocations: 1525)
+
+
+  [1m[36mUser Load (16.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 97ms (Views: 0.2ms | ActiveRecord: 37.5ms | Allocations: 1782)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:02:18 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:02:18 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 5.3ms | Allocations: 1250)
+
+
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 15ms (Views: 0.3ms | ActiveRecord: 7.1ms | Allocations: 1790)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:02:23 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:02:23 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (191.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 194ms (Views: 1.7ms | ActiveRecord: 191.9ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (64.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 67ms (Views: 0.2ms | ActiveRecord: 64.8ms | Allocations: 823)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:02:27 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:02:27 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 765)
+
+
+  [1m[36mPost Load (10.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 1.9ms | ActiveRecord: 10.2ms | Allocations: 2378)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:02:34 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:02:34 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (21.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 25ms (Views: 0.2ms | ActiveRecord: 21.7ms | Allocations: 766)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:02:36 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:02:36 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (86.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 89ms (Views: 2.0ms | ActiveRecord: 86.5ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 0.2ms | ActiveRecord: 10.4ms | Allocations: 766)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:02:40 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 810)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:02:40 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 14ms (Views: 0.3ms | ActiveRecord: 10.8ms | Allocations: 765)
+
+
+Started POST "/users" for ::1 at 2020-04-13 12:04:13 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"www.123.com", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "industry", "business_website", "first_name", "last_name", "user_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "ReginaClarke"], ["email", "Regina.R.Clarke@gmail.com"], ["password_digest", "$2a$12$eqZhBBYF41OlcLscsxCmwOnvx/VTVOGLIZJ9DFbS72s4e9JlPmkcW"], ["industry", "Fashion"], ["business_website", "www.123.com"], ["first_name", "Regina"], ["last_name", "Clarke"], ["user_type", "personal"], ["created_at", "2020-04-13 16:04:14.022646"], ["updated_at", "2020-04-13 16:04:14.022646"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 201 Created in 304ms (Views: 0.7ms | ActiveRecord: 5.9ms | Allocations: 12504)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:05:16 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:05:16 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (75.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 78ms (Views: 2.6ms | ActiveRecord: 75.2ms | Allocations: 975)
+
+
+  [1m[36mUser Load (82.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 88ms (Views: 0.6ms | ActiveRecord: 82.2ms | Allocations: 1915)
+
+
+Started POST "/auth/login" for ::1 at 2020-04-13 12:05:28 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 267ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1093)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:07:42 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 919)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:07:42 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:08:21 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:08:21 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (30.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (33.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 34ms (Views: 3.8ms | ActiveRecord: 30.0ms | Allocations: 1250)
+
+
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 33.6ms | Allocations: 2325)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:08:30 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:08:30 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1509)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 1220)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:08:31 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:08:31 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (6.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 6.5ms | Allocations: 1509)
+
+
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 10.7ms | Allocations: 1883)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:08:33 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 810)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:08:33 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:08:38 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 810)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:08:38 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (65.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 65.7ms | Allocations: 950)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:11:14 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:11:14 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (26.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (21.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 2.5ms | ActiveRecord: 26.6ms | Allocations: 1546)
+
+
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 21.8ms | Allocations: 1905)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:11:17 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:11:17 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 2.9ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 24ms (Views: 1.3ms | ActiveRecord: 16.9ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:11:43 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:11:43 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (184.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 187ms (Views: 1.9ms | ActiveRecord: 184.0ms | Allocations: 1509)
+
+
+  [1m[36mUser Load (39.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 39.9ms | Allocations: 1904)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:13:22 -0400
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:13:22 -0400
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1023)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 941)
+
+
+Started POST "/users" for ::1 at 2020-04-13 12:13:58 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Regina_Clarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"www.123.com", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Regina_Clarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 422 Unprocessable Entity in 297ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 6925)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:14:18 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:14:18 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (54.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (55.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 59ms (Views: 0.6ms | ActiveRecord: 54.0ms | Allocations: 1567)
+
+
+Completed 200 OK in 61ms (Views: 5.3ms | ActiveRecord: 55.1ms | Allocations: 1799)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:14:48 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:14:48 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 1688)
+
+
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.8ms | Allocations: 1634)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:14:51 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:14:51 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (37.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 2.5ms | ActiveRecord: 37.9ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:15:07 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 876)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:15:07 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:21:34 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:21:34 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (3.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 3.3ms | Allocations: 883)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 158ms (Views: 0.4ms | ActiveRecord: 81.8ms | Allocations: 4003)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:21:40 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:21:40 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.7ms | Allocations: 1543)
+
+
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 12.1ms | Allocations: 1930)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:22:09 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:22:09 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 13.7ms | Allocations: 941)
+
+
+  [1m[36mPost Load (26.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 3.2ms | ActiveRecord: 26.9ms | Allocations: 2543)
+
+
+Started POST "/users" for ::1 at 2020-04-13 12:22:38 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Regina_Clarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"www.123.com", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Regina_Clarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 422 Unprocessable Entity in 274ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 4001)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:23:57 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:23:57 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (13.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 13.3ms | Allocations: 1415)
+
+
+Completed 200 OK in 18ms (Views: 1.6ms | ActiveRecord: 13.1ms | Allocations: 1684)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:24:02 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:24:02 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (26.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 1.9ms | ActiveRecord: 26.6ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (50.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 53ms (Views: 0.5ms | ActiveRecord: 50.2ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:24:05 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:24:05 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.2ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:24:07 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:24:07 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (9.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 9.4ms | Allocations: 975)
+
+
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 11.3ms | Allocations: 1904)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:24:18 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:24:18 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (59.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 63ms (Views: 0.5ms | ActiveRecord: 59.8ms | Allocations: 941)
+
+
+Started POST "/users" for ::1 at 2020-04-13 12:25:00 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Regina_Clarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"www.123.com", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Regina_Clarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 422 Unprocessable Entity in 280ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 3997)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:25:59 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:25:59 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (17.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mPost Load (10.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 17.6ms | Allocations: 1605)
+
+
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 10.1ms | Allocations: 1795)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:26:24 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:26:24 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (4.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 4.2ms | Allocations: 1499)
+
+
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 7.6ms | Allocations: 1883)
+
+
+Started POST "/users" for ::1 at 2020-04-13 12:26:48 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Regina_Clarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"www.123.com", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Regina_Clarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 422 Unprocessable Entity in 273ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3980)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:27:09 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:27:09 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 941)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (85.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 89ms (Views: 2.9ms | ActiveRecord: 85.9ms | Allocations: 810)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:27:21 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:27:21 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (7.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 7.3ms | Allocations: 1509)
+
+
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 13.2ms | Allocations: 1904)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:27:43 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:27:43 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (21.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 27ms (Views: 4.3ms | ActiveRecord: 21.9ms | Allocations: 1943)
+
+
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 1684)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:27:47 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:27:47 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.8ms | Allocations: 1525)
+
+
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 10.3ms | Allocations: 1883)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:29:25 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:29:25 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (12.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Processing by AuthenticationController#verify as HTML
+Completed 200 OK in 18ms (Views: 5.2ms | ActiveRecord: 12.2ms | Allocations: 1338)
+
+
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 4.5ms | Allocations: 1161)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:29:34 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 810)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:29:34 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:29:43 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:29:43 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.5ms | Allocations: 1544)
+
+
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 1663)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:29:46 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:29:46 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 4.0ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (65.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 65.5ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 12:29:53 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 12:29:53 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 810)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 941)
+
+
+Started POST "/users" for ::1 at 2020-04-13 13:23:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Regina_Clarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"1984", "user_type"=>"business", "industry"=>"Fashion"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Regina_Clarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 422 Unprocessable Entity in 276ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 4005)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 13:31:10 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 13:31:10 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 27ms (Views: 2.5ms | ActiveRecord: 13.8ms | Allocations: 2207)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (16.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 2.4ms | ActiveRecord: 16.2ms | Allocations: 883)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 13:31:18 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 13:31:18 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (89.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 92ms (Views: 3.0ms | ActiveRecord: 89.0ms | Allocations: 1550)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 1.9ms | Allocations: 1904)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 13:31:46 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 13:31:46 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 3.1ms | Allocations: 1065)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 3.6ms | Allocations: 1893)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 13:32:11 -0400
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-13 13:32:11 -0400
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.9ms | Allocations: 1011)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 13:32:34 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 13:32:34 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (14.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 2.5ms | ActiveRecord: 14.0ms | Allocations: 1499)
+
+
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 23.2ms | Allocations: 1904)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 13:32:37 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 13:32:37 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (267.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 270ms (Views: 2.2ms | ActiveRecord: 267.0ms | Allocations: 1499)
+
+
+  [1m[36mUser Load (274.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 280ms (Views: 0.7ms | ActiveRecord: 274.7ms | Allocations: 1904)
+
+
+Started POST "/users" for ::1 at 2020-04-13 13:33:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Regina_Clarke", "password"=>"[FILTERED]", "email"=>"Regina.R.Clarke1@gmail.com", "first_name"=>"Regina", "last_name"=>"Clarke", "business_website"=>"1984", "user_type"=>"personal", "industry"=>"Fashion"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Regina_Clarke"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Regina.R.Clarke1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "industry", "business_website", "first_name", "last_name", "user_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Regina_Clarke"], ["email", "Regina.R.Clarke1@gmail.com"], ["password_digest", "$2a$12$M66rdWIiZSf3DCDr/zN74.v8Gri9srpTkpCutl3pjwSWJnYn7ev7y"], ["industry", "Fashion"], ["business_website", "1984"], ["first_name", "Regina"], ["last_name", "Clarke"], ["user_type", "personal"], ["created_at", "2020-04-13 17:33:18.368711"], ["updated_at", "2020-04-13 17:33:18.368711"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 201 Created in 285ms (Views: 0.8ms | ActiveRecord: 3.7ms | Allocations: 4849)
+
+
+Started POST "/posts" for ::1 at 2020-04-13 13:37:45 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"kjnkknl,n", "link_to_product"=>"www.rando.com"}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 129)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started POST "/posts" for ::1 at 2020-04-13 13:41:21 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"kjnkknl,n", "link_to_product"=>"www.rando.com"}}
+Completed 404 Not Found in 10ms (ActiveRecord: 7.7ms | Allocations: 705)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started POST "/posts" for ::1 at 2020-04-13 13:42:25 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"kjnkknl,n", "link_to_product"=>"www.rando.com"}}
+Completed 404 Not Found in 4ms (ActiveRecord: 3.1ms | Allocations: 629)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started POST "/posts" for ::1 at 2020-04-13 13:43:29 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"kjnkknl,n", "link_to_product"=>"www.rando.com"}}
+Completed 404 Not Found in 4ms (ActiveRecord: 3.2ms | Allocations: 631)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started POST "/posts" for ::1 at 2020-04-13 13:44:21 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"kjnkknl,n", "link_to_product"=>"www.rando.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[36mPost Create (2.8ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "link_to_product", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["caption", "kjnkknl,n"], ["link_to_product", "www.rando.com"], ["created_at", "2020-04-13 17:44:21.926014"], ["updated_at", "2020-04-13 17:44:21.926014"]]
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+Completed 201 Created in 34ms (Views: 1.1ms | ActiveRecord: 10.9ms | Allocations: 15638)
+
+

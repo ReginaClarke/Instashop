@@ -28,7 +28,6 @@ class Container extends Component {
       currentUser: null,
       authFormData: {
         username: "",
-        email: "",
         password: "",
       },
     };
@@ -108,7 +107,7 @@ class Container extends Component {
   // -------------- AUTH ------------------
 
   handleLoginButton = () => {
-    this.props.history.push("/login");
+    this.props.history.push("/explorer");
   };
 
   handleLogin = async () => {
@@ -120,10 +119,12 @@ class Container extends Component {
     this.props.history.push("/explore");
   };
 
+
   handleRegister = async (e) => {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/explorer");
   };
 
   handleLogout = () => {
@@ -150,7 +151,7 @@ class Container extends Component {
         <Switch>
           <Route
             exact
-            path="/login"
+            path="/"
             render={() => (
               <Login
                 handleLogin={this.handleLogin}
