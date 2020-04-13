@@ -58,6 +58,7 @@ class Container extends Component {
         link_to_product: "",
       },
     }));
+    this.props.history.push("/explorer");
   };
 
   editPost = async () => {

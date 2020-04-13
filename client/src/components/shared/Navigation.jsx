@@ -14,9 +14,9 @@ const Navigation = () => (
         <NavLink className="nav" to="/create/mypost">
           Create Product
         </NavLink>
-        <NavLink className="nav" to="/explorer">
+        {/* <NavLink className="nav" to="/explorer">
           Search
-        </NavLink>
+        </NavLink> */}
         <NavLink className="nav" to="/">
           Sign Out
         </NavLink>

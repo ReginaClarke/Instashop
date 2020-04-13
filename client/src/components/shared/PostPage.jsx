@@ -45,7 +45,18 @@ class PostsPage extends Component {
             ) : (
               <>
                 <h3>{post.caption}</h3>
-                <p>{post.link_to_product}</p>
+                <p className="singlepostdate">
+                  Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
+                  {new Date(`${post.created_at}`).getDate()}/
+                  {new Date(`${post.created_at}`).getFullYear()}
+                </p>
+                <img
+                  className="postpageimage"
+                  src={post.link_to_product}
+                  alt="product"
+                  style={{ maxWidth: "200px", maxHeight: "200px" }}
+                />
+
                 <button
                   onClick={() => {
                     this.setState({
@@ -64,9 +75,13 @@ class PostsPage extends Component {
                 >
                   Delete
                 </button>
-                <Link to="/posts">
-                  <button>Cancel</button>
-                </Link>
+                <button
+                  onClick={() => {
+                    this.props.history.push("/posts");
+                  }}
+                >
+                  Cancel
+                </button>
               </>
             )}
           </div>

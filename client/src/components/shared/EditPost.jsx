@@ -1,12 +1,11 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link} from "react-router-dom";
 
 function EditPost(props) {
   return (
     <div>
       <h3>Edit Post</h3>
       <form onSubmit={props.handleSubmit}>
-        <p>Caption:</p>
         <input
           type="text"
           name="caption"
@@ -14,7 +13,6 @@ function EditPost(props) {
           onChange={props.handleFormChange}
         />
 
-        <p>Link to Product:</p>
         <input
           type="text"
           name="link_to_product"
@@ -24,6 +22,9 @@ function EditPost(props) {
 
         <button>Submit Change</button>
       </form>
+      <Link to="/explorer">
+      <button>Cancel</button>
+      </Link>
     </div>
   );
 }

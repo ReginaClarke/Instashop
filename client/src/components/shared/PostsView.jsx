@@ -1,28 +1,27 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
 
-const Search = ({ onChange, onSubmit, name, value }) => {
-  return (
-    <div className="form-container">
-      <form onSubmit={(e) => onSubmit(e)}>
-        <input
-          value={value}
-          onChange={(e) => onChange(e)}
-          name={name}
-          type="text"
-          placeholder="Enter Search"
-        />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  );
-};
+// const Search = ({ onChange, onSubmit, name, value }) => {
+//   return (
+//     <div className="form-container">
+//       <form onSubmit={(e) => onSubmit(e)}>
+//         <input
+//           value={value}
+//           onChange={(e) => onChange(e)}
+//           name={name}
+//           type="text"
+//           placeholder="Enter Search"
+//         />
+//         <button type="submit">Search</button>
+//       </form>
+//     </div>
+//   );
+// };
 
 function PostsView(props) {
   return (
     <>
-      <Search />
+      {/* <Search /> */}
       <div className="post-container">
         {props.posts.map((post) => (
           <div
@@ -33,20 +32,20 @@ function PostsView(props) {
               window.scrollTo(0, 0);
             }}
           >
-            {/* <img alt='see caption' src={post.image} /> */}
-            <p>{post.caption}</p>
-            <Link src={post.link_to_product}>
-              <p>{post.link_to_product}</p>
-            </Link>
+            <img
+              src={post.link_to_product}
+              alt="product"
+              style={{ maxWidth: "200px", maxHeight: "200px" }}
+            />
+
+            <p className="postCaption">{post.caption}</p>
+            <p className="postdate">
+              Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
+              {new Date(`${post.created_at}`).getDate()}/
+              {new Date(`${post.created_at}`).getFullYear()}
+            </p>
           </div>
         ))}
-        {/* <div
-        className="post-card"
-        onClick={() => {
-          props.history.push("/new/post");
-          window.scrollTo(0, 0);
-        }}
-      ></div> */}
       </div>
     </>
   );
