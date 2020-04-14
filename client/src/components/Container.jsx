@@ -51,6 +51,7 @@ class Container extends Component {
 
   async componentDidMount() {
     this.getPosts();
+    this.getComments();
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser });
@@ -134,9 +135,12 @@ class Container extends Component {
     });
   };
 
-  newComment = async (e) => {
+  newComment = async (e,post_id) => {
     e.preventDefault();
-    const comment = await createComment(this.state.commentForm);
+    console.log(this.state.commentForm)
+    const postId = { post_id: post_id }
+    const postComments = this.state.commentForm
+    const comment = await createComment({...postComments,...postId});
     this.setState((prevState) => ({
       comments: [...prevState.comments, comment],
       commentForm: {
@@ -230,6 +234,7 @@ class Container extends Component {
   };
 
   render() {
+    console.log(this.state.comments)
     return (
       <div className="App">
         <Header
@@ -312,8 +317,9 @@ class Container extends Component {
 
           <Route
             path="/posts/:id/addcomment"
-            render={() => (
+            render={(props) => (
               <CreateComment
+                {...props}
                 handleCommentFormChange={this.handleCommentFormChange}
                 commentForm={this.state.commentForm}
                 newComment={this.newComment}
@@ -332,6 +338,7 @@ class Container extends Component {
                 <PostPage
                   id={id}
                   post={post}
+                  comments={this.state.comments}
                   handleFormChange={this.handleFormChange}
                   mountEditForm={this.mountEditForm}
                   editPost={this.editPost}

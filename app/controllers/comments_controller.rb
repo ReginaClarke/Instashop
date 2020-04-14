@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
 
-    render json: @comments
+    render json: @comments #, include: [comments: {include: :user}]
   end
 
   # GET /comments/1
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     @comment = @current_user.comments.new(comment_params)
 
     if @comment.save
-      render json: @comment, status: :created#, location: @comment
+      render json: @comment, status: :created #, location: @comment
     else
       render json: @comment.errors, status: :unprocessable_entity
     end

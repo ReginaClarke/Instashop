@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 
 function CreateComment(props) {
+  console.log(props.match.params.id)
   return (
     <div className="create-form">
       {/* <div className="post-page">
@@ -26,7 +27,7 @@ function CreateComment(props) {
       </div>
  */}
       <div>
-        <form onSubmit={props.newComment}>
+        <form onSubmit={(e)=>props.newComment(e,props.match.params.id)}>
           <textarea
             type="text"
             placeholder="Enter Comment Caption"

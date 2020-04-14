@@ -3,7 +3,7 @@ import EditPost from "./EditPost";
 import { Route } from "react-router-dom";
 import { withRouter } from "react-router";
 
-class PostsPage extends Component {
+class PostPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +17,19 @@ class PostsPage extends Component {
 
   render() {
     const { post } = this.props;
+
+    const postComments =
+      post &&
+      this.props.comments &&
+      this.props.comments.filter((comment) => {
+        return comment.post_id === post.id;
+      });
+
+    const comments =
+      postComments &&
+      postComments.map((comment) => {
+        return <div>{comment.caption}</div>;
+      });
     return (
       <div className="post-page">
         {post === undefined ? (
@@ -98,6 +111,8 @@ class PostsPage extends Component {
                     </button>
                   </div>
                 ) : null}
+
+                <p> {comments}</p>
               </>
             )}
           </div>
@@ -107,4 +122,4 @@ class PostsPage extends Component {
   }
 }
 
-export default withRouter(PostsPage);
+export default withRouter(PostPage);
