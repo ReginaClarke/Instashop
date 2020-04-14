@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+
 function CreatePost(props) {
   return (
     <div className="create-form">

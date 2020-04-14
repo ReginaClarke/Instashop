@@ -23,10 +23,9 @@ class PostsPage extends Component {
           <h2>Loading . . .</h2>
         ) : (
           <div>
-            <img alt={post.name} src={post.photo} />
             {this.state.isEdit ? (
               <Route
-                path={"/myposts/:id/edit"}
+                path={"/posts/:id/edit"}
                 render={() => (
                   <EditPost
                     handleFormChange={this.props.handleFormChange}
@@ -35,7 +34,7 @@ class PostsPage extends Component {
                       this.props.editPost();
                       this.setState({ isEdit: false });
                       this.props.history.push(
-                        `/myposts/${this.props.postForm.id}`
+                        `/posts/${this.props.postForm.id}`
                       );
                     }}
                     postForm={this.props.postForm}
@@ -64,29 +63,41 @@ class PostsPage extends Component {
 
                 <button
                   onClick={() => {
-                    this.setState({
-                      isEdit: true,
-                    });
-                    this.props.history.push(`/myposts/${post.id}/edit`);
+                    this.props.history.push(`/posts/${post.id}/addcomment`);
                   }}
                 >
-                  Edit
+                  Add Comment
                 </button>
-                <button
-                  onClick={() => {
-                    this.props.deletePost(post.id);
-                    this.props.history.push("/posts");
-                  }}
-                >
-                  Delete
-                </button>
-                <button
-                  onClick={() => {
-                    this.props.history.push("/posts");
-                  }}
-                >
-                  Cancel
-                </button>
+
+                {this.props.currentUser.id === post.user_id ? (
+                  <div>
+                    <button
+                      onClick={() => {
+                        this.setState({
+                          isEdit: true,
+                        });
+                        this.props.history.push(`/posts/${post.id}/edit`);
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => {
+                        this.props.deletePost(post.id);
+                        this.props.history.push("/posts");
+                      }}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => {
+                        this.props.history.push("/posts");
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : null}
               </>
             )}
           </div>

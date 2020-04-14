@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 import PostsView from "./shared/PostsView";
+import MyPostsView from "./shared/MyPostsView";
+
 import PostPage from "./shared/PostPageEditorVersion";
 import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
 import Header from "./shared/Header";
 import CreateComment from "./shared/CreateComment";
+import EditComment from "./shared/EditComment";
+
 import {
   createPost,
   readAllPosts,
@@ -16,7 +20,7 @@ import {
   createComment,
   readAllComments,
   updateComment,
- destroyComment,
+  destroyComment,
   loginUser,
   registerUser,
   verifyUser,
@@ -33,8 +37,10 @@ class Container extends Component {
         image_link: "",
         product_name: "",
       },
-      comments:[],
-      commentForm: "",
+      comments: [],
+      commentForm: {
+        caption: "",
+      },
       currentUser: null,
       authFormData: {
         username: "",
@@ -177,7 +183,9 @@ class Container extends Component {
 
   resetCommentForm = () => {
     this.setState({
-      commentForm: "",
+      commentForm: {
+        caption: "",
+      },
     });
   };
 
@@ -277,8 +285,22 @@ class Container extends Component {
               />
             )}
           />
+          {/* //////////////////////////////////////////// */}
+
           <Route
-            path="/create/mypost"
+            exact
+            path="/users/:id/myposts"
+            render={() => (
+              <MyPostsView
+                posts={this.state.posts}
+                currentUser={this.state.currentUser}
+              />
+            )}
+          />
+
+          {/* //////////////////////////////////////////// */}
+          <Route
+            path="/create/post"
             render={() => (
               <CreatePost
                 handleFormChange={this.handleFormChange}
@@ -289,7 +311,7 @@ class Container extends Component {
           />
 
           <Route
-            path="/create/comment"
+            path="/posts/:id/addcomment"
             render={() => (
               <CreateComment
                 handleCommentFormChange={this.handleCommentFormChange}
@@ -298,8 +320,9 @@ class Container extends Component {
               />
             )}
           />
+
           <Route
-            path="/myposts/:id"
+            path="/posts/:id"
             render={(props) => {
               const { id } = props.match.params;
               const post = this.state.posts.find(
@@ -314,6 +337,28 @@ class Container extends Component {
                   editPost={this.editPost}
                   postForm={this.state.postForm}
                   deletePost={this.deletePost}
+                  currentUser={this.state.currentUser}
+                />
+              );
+            }}
+          />
+
+          <Route
+            path="/posts/:id/editcomment"
+            render={(props) => {
+              const { id } = props.match.params;
+              const comment = this.state.comments.find(
+                (el) => el.id === parseInt(id)
+              );
+              return (
+                <EditComment
+                  id={id}
+                  comment={comment}
+                  handleCommentFormChange={this.handleCommentFormChange}
+                  mountCommentEditForm={this.mountCommentEditForm}
+                  editComment={this.editComment}
+                  commentForm={this.state.commentForm}
+                  deleteComment={this.deleteComment}
                 />
               );
             }}

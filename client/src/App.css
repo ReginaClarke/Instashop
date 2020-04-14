@@ -224,6 +224,11 @@ form {
   font-size: 0.75em;
 }
 
+.addcomment{
+  display: flex;
+  font-size: 1em;
+}
+
 /* ----------------- EXPLORER PAGE -------------------------- */
 /*---*/
 /*---*/

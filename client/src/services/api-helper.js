@@ -45,6 +45,11 @@ export const readAllPosts = async () => {
   return resp.data;
 };
 
+// export const readAllUserPosts = async () => {
+//   const resp = await api.get(`/users/${id}`);
+//   return resp.data;
+// };
+
 export const updatePost = async (id, data) => {
   const resp = await api.put(`/posts/${id}`, { post: data });
   return resp.data;
