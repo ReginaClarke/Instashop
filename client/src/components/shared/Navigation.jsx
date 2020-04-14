@@ -1,15 +1,15 @@
 import React from "react";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Navigation = () => (
-
+const Navigation = (props) => (
   <>
+    {props.currentUser ? (
       <nav className="nav">
         <NavLink className="nav" to="/explorer">
           Explorer
         </NavLink>
         <NavLink className="nav" to="/myposts">
-         My Product List
+          My Product List
         </NavLink>
         <NavLink className="nav" to="/create/mypost">
           Create Product
@@ -17,10 +17,14 @@ const Navigation = () => (
         {/* <NavLink className="nav" to="/explorer">
           Search
         </NavLink> */}
-        <NavLink className="nav" to="/">
-          Sign Out
-        </NavLink>
       </nav>
+    ) : (
+        null)}
+    
+    {props.currentUser ? (
+      <button onClick={props.handleLogout}>Sign Out</button> ):
+      (null
+    )}
   </>
 );
 

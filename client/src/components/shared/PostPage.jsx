@@ -44,7 +44,7 @@ class PostsPage extends Component {
               />
             ) : (
               <>
-                <h3>{post.caption}</h3>
+                <h3>{post.product_name}</h3>
                 <p className="singlepostdate">
                   Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
                   {new Date(`${post.created_at}`).getDate()}/
@@ -52,10 +52,13 @@ class PostsPage extends Component {
                 </p>
                 <img
                   className="postpageimage"
-                  src={post.link_to_product}
+                  src={post.image_link}
                   alt="product"
                   style={{ maxWidth: "200px", maxHeight: "200px" }}
                 />
+                <a className="linktoproduct" href={post.link_to_product}>
+                  Buy Here!
+                </a>
 
                 <button
                   onClick={() => {

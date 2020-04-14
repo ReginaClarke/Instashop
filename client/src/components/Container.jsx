@@ -6,6 +6,8 @@ import PostPage from "./shared/PostPage";
 import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
+import Header from "./shared/Header";
+
 import {
   createPost,
   readAllPosts,
@@ -24,6 +26,8 @@ class Container extends Component {
       postForm: {
         caption: "",
         link_to_product: "",
+        image_link: "",
+        product_name: "",
       },
       currentUser: null,
       authFormData: {
@@ -56,6 +60,8 @@ class Container extends Component {
       postForm: {
         caption: "",
         link_to_product: "",
+        image_link: "",
+        product_name: "",
       },
     }));
     this.props.history.push("/explorer");
@@ -101,6 +107,8 @@ class Container extends Component {
       postForm: {
         caption: "",
         link_to_product: "",
+        image_link: "",
+        product_name: "",
       },
     });
   };
@@ -117,9 +125,8 @@ class Container extends Component {
       password: this.state.authFormData.password,
     });
     this.setState({ currentUser });
-    this.props.history.push("/explore");
+    this.props.history.push("/explorer");
   };
-
 
   handleRegister = async (e) => {
     e.preventDefault();
@@ -133,6 +140,7 @@ class Container extends Component {
     this.setState({
       currentUser: null,
     });
+    this.props.history.push("/");
   };
 
   authHandleChange = (e) => {
@@ -148,11 +156,27 @@ class Container extends Component {
   render() {
     return (
       <div className="App">
+        <Header
+          currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
+        />
 
         <Switch>
           <Route
             exact
             path="/"
+            render={() => (
+              <Login
+                handleLogin={this.handleLogin}
+                handleChange={this.authHandleChange}
+                formData={this.state.authFormData}
+              />
+            )}
+          />
+
+          <Route
+            exact
+            path="/login"
             render={() => (
               <Login
                 handleLogin={this.handleLogin}

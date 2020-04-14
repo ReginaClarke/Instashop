@@ -4,7 +4,10 @@ import Navigation from "./Navigation";
 const Header = (props) => (
   <header>
     <h1>Instashop</h1>
-    <Navigation />
+    <Navigation
+      currentUser={props.currentUser}
+    handleLogout={props.handleLogout}
+    />
     <div className="main">{props.children}</div>
     <hr />
   </header>

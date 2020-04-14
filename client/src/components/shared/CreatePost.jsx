@@ -53,6 +53,14 @@ function CreatePost(props) {
 
       <div>
         <form onSubmit={props.newPost}>
+          <input
+            type="text"
+            placeholder="Enter Product Name"
+            name="product_name"
+            value={props.postForm.product_name}
+            onChange={props.handleFormChange}
+          />
+
           <textarea
             type="text"
             placeholder="Enter Post Caption"
@@ -63,7 +71,15 @@ function CreatePost(props) {
 
           <input
             type="text"
-            placeholder="Enter Link to Product"
+            placeholder="Enter Link to Image"
+            name="image_link"
+            value={props.postForm.image_link}
+            onChange={props.handleFormChange}
+          />
+
+          <input
+            type="text"
+            placeholder="Enter Link to Shop"
             name="link_to_product"
             value={props.postForm.link_to_product}
             onChange={props.handleFormChange}

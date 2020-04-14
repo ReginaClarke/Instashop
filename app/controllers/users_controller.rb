@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: [:index, :show]
+  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :authorize_request, except: [:index, :create, :show]
 
   # GET /users
   def index
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user.frontend_data
+    render json: @user, include: :posts
   end
 
   # POST /users
