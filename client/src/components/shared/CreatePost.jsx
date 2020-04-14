@@ -1,56 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 
 function CreatePost(props) {
-  //help with image upload for React/cloudinary https://www.youtube.com/watch?v=hlYczGvLlDY
-  // const [image, setImage] = useState("");
-  // const [loading, setLoading] = useState(false);
-
-  // const uploadImage = async (e) => {
-  //   const files = e.target.files;
-  //   const data = new FormData();
-  //   data.append("file", files[0]);
-  //   data.append("upload_preset", "instashop");
-  //   setLoading(true);
-  //   const res = await fetch(
-  //     "https://api.cloudinary.com/v1_1/dolrvzlkq/image/upload",
-  //     {
-  //       method: "POST",
-  //       body: data,
-  //     }
-  //   );
-  //   const image = await res.json();
-
-  //   setImage(image.secure_url);
-  //   setLoading(false);
-  // };
-
   return (
     <div className="create-form">
-      {/* <div>
-        <h3 className="createposth3">Create Post</h3>
-
-        <label htmlFor="image">
-          Upload Image
-          <input
-            type="file"
-            name="image"
-            accept="image/*"
-            onChange={uploadImage}
-          />
-        </label>
-
-        {loading ? (
-          <h3>Loading...</h3>
-        ) : (
-          <img
-            src={image}
-            style={{ maxWidth: "300px", maxHeight: "300px" }}
-            alt="Upload Imageost"
-          />
-        )}
-      </div> */}
-
       <div>
         <form onSubmit={props.newPost}>
           <input

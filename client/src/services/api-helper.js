@@ -61,7 +61,7 @@ export const createComment = async (data) => {
   return resp.data;
 };
 
-export const readAllCommentss = async () => {
+export const readAllComments = async () => {
   const resp = await api.get("/comments");
   return resp.data;
 };

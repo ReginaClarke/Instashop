@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import EditPost from "./EditPost";
-import { Route, Link } from "react-router-dom";
+import EditPost from "./EditComment";
+import { Route } from "react-router-dom";
 import { withRouter } from "react-router";
 
 class PostsPage extends Component {
@@ -68,22 +68,7 @@ class PostsPage extends Component {
                     this.props.history.push(`/myposts/${post.id}/edit`);
                   }}
                 >
-                  Edit
-                </button>
-                <button
-                  onClick={() => {
-                    this.props.deletePost(post.id);
-                    this.props.history.push("/posts");
-                  }}
-                >
-                  Delete
-                </button>
-                <button
-                  onClick={() => {
-                    this.props.history.push("/posts");
-                  }}
-                >
-                  Cancel
+                  Add Comment
                 </button>
               </>
             )}

@@ -17,14 +17,20 @@ const Navigation = (props) => (
         {/* <NavLink className="nav" to="/explorer">
           Search
         </NavLink> */}
+
+{/* <button className="signOut" onClick={props.handleLogout}>
+          Sign Out
+      </button> */}
       </nav>
-    ) : (
-        null)}
-    
+    ) : null}
+
     {props.currentUser ? (
-      <button onClick={props.handleLogout}>Sign Out</button> ):
-      (null
-    )}
+      <div>
+      <button className="signOut" onClick={props.handleLogout}>
+          Sign Out
+      </button>
+      </div>
+    ) : null}
   </>
 );
 

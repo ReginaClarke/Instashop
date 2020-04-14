@@ -2,17 +2,21 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 import PostsView from "./shared/PostsView";
-import PostPage from "./shared/PostPage";
+import PostPage from "./shared/PostPageEditorVersion";
 import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
 import Header from "./shared/Header";
-
+import CreateComment from "./shared/CreateComment";
 import {
   createPost,
   readAllPosts,
   updatePost,
   destroyPost,
+  createComment,
+  readAllComments,
+  updateComment,
+ destroyComment,
   loginUser,
   registerUser,
   verifyUser,
@@ -29,6 +33,8 @@ class Container extends Component {
         image_link: "",
         product_name: "",
       },
+      comments:[],
+      commentForm: "",
       currentUser: null,
       authFormData: {
         username: "",
@@ -45,6 +51,7 @@ class Container extends Component {
     }
   }
 
+  //---------------------POSTS ------------------
   getPosts = async () => {
     const posts = await readAllPosts();
     this.setState({
@@ -110,6 +117,67 @@ class Container extends Component {
         image_link: "",
         product_name: "",
       },
+    });
+  };
+  //----------------COMMENTS--------------
+
+  getComments = async () => {
+    const comments = await readAllComments();
+    this.setState({
+      comments,
+    });
+  };
+
+  newComment = async (e) => {
+    e.preventDefault();
+    const comment = await createComment(this.state.commentForm);
+    this.setState((prevState) => ({
+      comments: [...prevState.comments, comment],
+      commentForm: {
+        caption: "",
+      },
+    }));
+    this.props.history.push("/explorer");
+  };
+
+  editComment = async () => {
+    const { commentForm } = this.state;
+    await updateComment(commentForm.id, commentForm);
+    this.setState((prevState) => ({
+      comments: prevState.comments.map((comment) => {
+        return comment.id === commentForm.id ? commentForm : comment;
+      }),
+    }));
+  };
+
+  deleteComment = async (id) => {
+    await destroyComment(id);
+    this.setState((prevState) => ({
+      comments: prevState.comments.filter((comment) => comment.id !== id),
+    }));
+  };
+
+  handleCommentFormChange = (e) => {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
+      commentForm: {
+        ...prevState.commentForm,
+        [name]: value,
+      },
+    }));
+  };
+
+  mountCommentEditForm = async (id) => {
+    const comments = await readAllComments();
+    const comment = comments.find((el) => el.id === parseInt(id));
+    this.setState({
+      commentForm: comment,
+    });
+  };
+
+  resetCommentForm = () => {
+    this.setState({
+      commentForm: "",
     });
   };
 
@@ -216,6 +284,17 @@ class Container extends Component {
                 handleFormChange={this.handleFormChange}
                 postForm={this.state.postForm}
                 newPost={this.newPost}
+              />
+            )}
+          />
+
+          <Route
+            path="/create/comment"
+            render={() => (
+              <CreateComment
+                handleCommentFormChange={this.handleCommentFormChange}
+                commentForm={this.state.commentForm}
+                newComment={this.newComment}
               />
             )}
           />

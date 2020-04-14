@@ -1,10 +1,13 @@
-.nav {
-  text-decoration: none;
-  padding: 1em;
-  background-color: black;
-  color: white;
-  text-align: right;
-  font-weight: bold;
+#root{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 .hyperlinks {
@@ -163,6 +166,23 @@ form {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+@media (max-width:1600px){
+  .post-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width:1325px){
+  .post-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:900px){
+  .post-container{
+    grid-template-columns: 1fr;
+  }
+}
 .post-card {
   border-style: double;
   border-color: #686868;
@@ -228,10 +248,15 @@ form {
 }
 
 .postpageimage {
-  min-width: 6em;
-  min-height: 6em;
-  max-width: 3em;
-  max-height: 3em;
+  min-width: 50em;
+  min-height: 50em;
+}
+
+@media (min-device-width: 300px) {
+  .postpageimage {
+    min-width: 20em;
+    min-height: 20em;
+  }
 }
 
 .singlepostdate {
@@ -244,6 +269,7 @@ form {
 .linktoproduct {
   text-align: center;
   font-weight: bolder;
+  color: black;
 }
 
 .linktoproduct:link {
@@ -257,6 +283,10 @@ form {
 .linktoproduct:hover {
   color: white;
   background-color: black;
+}
+
+.singlepostview {
+  color: #686868;
 }
 /* ----------------- SINGLE POST PAGE -------------------------- */
 /*---*/
@@ -299,6 +329,35 @@ textarea {
 /*---*/
 /*---*/
 /*---*/
+
+
+.nav {
+  text-decoration: none;
+  padding: .5em;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
+
+
+@media (max-width:900px){
+  nav{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.signOut {
+  display: flex;
+  text-align: center;
+  margin-right: 1em;
+  font-size: 0.5em;
+}
+
 header {
   width: 100%;
   position: top;
@@ -311,6 +370,6 @@ footer {
   position: bottom;
   bottom: 0em;
   text-align: center;
-  margin: 9em auto 0em auto;
+  margin: 10em auto 0em auto;
   padding: 0em;
 }

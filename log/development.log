@@ -21875,3 +21875,1596 @@ Processing by AuthenticationController#verify as HTML
 Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 1029)
 
 
+Started GET "/auth/verify" for ::1 at 2020-04-13 20:57:01 -0400
+Started GET "/posts" for ::1 at 2020-04-13 20:57:01 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[35m (65.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (25.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 112ms (Views: 8.6ms | ActiveRecord: 64.7ms | Allocations: 18479)
+
+
+  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 153ms (Views: 55.8ms | ActiveRecord: 80.8ms | Allocations: 23013)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 20:57:05 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 20:57:05 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (77.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 80ms (Views: 0.5ms | ActiveRecord: 77.1ms | Allocations: 1403)
+
+
+  [1m[36mPost Load (473.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 482ms (Views: 6.7ms | ActiveRecord: 474.5ms | Allocations: 3212)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:05:25 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:05:25 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1029)
+
+
+  [1m[36mPost Load (10.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 18ms (Views: 6.7ms | ActiveRecord: 11.4ms | Allocations: 3536)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:05:32 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 5.7ms | Allocations: 2131)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:07:03 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:07:03 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:07:03 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 5.8ms | Allocations: 2131)
+
+
+  [1m[36mPost Load (112.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (15.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 133ms (Views: 4.4ms | ActiveRecord: 128.1ms | Allocations: 4857)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (456.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 474ms (Views: 0.5ms | ActiveRecord: 458.4ms | Allocations: 1110)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:07:18 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:07:18 -0400
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:07:18 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (11.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 3551)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 13.3ms | Allocations: 5120)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 227ms (Views: 221.7ms | ActiveRecord: 4.6ms | Allocations: 5397)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:07:46 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:07:46 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:07:46 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (5.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 6.4ms | Allocations: 2677)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 172ms (Views: 165.3ms | ActiveRecord: 5.6ms | Allocations: 4448)
+
+
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 180ms (Views: 167.4ms | ActiveRecord: 11.4ms | Allocations: 6247)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:08:14 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:08:14 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:08:14 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 4.7ms | Allocations: 2633)
+
+
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 268ms (Views: 263.4ms | ActiveRecord: 4.6ms | Allocations: 5266)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 272ms (Views: 265.7ms | ActiveRecord: 6.2ms | Allocations: 6311)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:08:25 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:08:25 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:08:25 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 1223)
+
+
+  [1m[36mUser Load (33.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/posts" for ::1 at 2020-04-13 21:08:29 -0400
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:08:29 -0400
+Completed 200 OK in 4011ms (Views: 4006.5ms | ActiveRecord: 4.1ms | Allocations: 6656)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4011ms (Views: 3973.9ms | ActiveRecord: 36.9ms | Allocations: 7067)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:08:29 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by PostsController#index as HTML
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 2563)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 4.2ms | Allocations: 4734)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (14.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 27ms (Views: 10.7ms | ActiveRecord: 15.9ms | Allocations: 4832)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:08:45 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:08:45 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 2.0ms | Allocations: 2980)
+
+
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:08:45 -0400
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 2.8ms | Allocations: 4182)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 1161)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:08:48 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:08:48 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:08:48 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 6.4ms | Allocations: 941)
+
+
+  [1m[36mPost Load (19.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 38ms (Views: 9.8ms | ActiveRecord: 27.7ms | Allocations: 3666)
+
+
+  [1m[36mPost Load (44.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (19.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 304ms (Views: 240.5ms | ActiveRecord: 63.4ms | Allocations: 5635)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:07 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:07 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.7ms | Allocations: 3088)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:07 -0400
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 5.2ms | Allocations: 4840)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 19.7ms | Allocations: 1007)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:35 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:35 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:35 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (116.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (25.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (21.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 21.6ms | Allocations: 2658)
+
+
+  [1m[36mUser Load (97.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (95.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 796ms (Views: 582.0ms | ActiveRecord: 213.8ms | Allocations: 5703)
+
+
+Completed 200 OK in 684ms (Views: 563.9ms | ActiveRecord: 120.1ms | Allocations: 5734)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:37 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:37 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:37 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (16.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (19.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (21.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 21.3ms | Allocations: 2675)
+
+
+  [1m[36mUser Load (14.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 492ms (Views: 460.6ms | ActiveRecord: 31.2ms | Allocations: 5386)
+
+
+Completed 200 OK in 492ms (Views: 460.9ms | ActiveRecord: 31.0ms | Allocations: 5617)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:41 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:41 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:41 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (5.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 6.2ms | Allocations: 2141)
+
+
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (15.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mUser Load (56.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 393ms (Views: 0.5ms | ActiveRecord: 14.3ms | Allocations: 1916)
+
+
+Completed 200 OK in 397ms (Views: 324.7ms | ActiveRecord: 71.9ms | Allocations: 3391)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:43 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:43 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:43 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (164.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (14.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 20ms (Views: 5.3ms | ActiveRecord: 14.7ms | Allocations: 3481)
+
+
+  [1m[36mUser Load (39.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (39.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 424ms (Views: 219.3ms | ActiveRecord: 203.7ms | Allocations: 5373)
+
+
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 258ms (Views: 0.4ms | ActiveRecord: 39.5ms | Allocations: 4590)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:53 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:53 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:53 -0400
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.1ms | Allocations: 2805)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.6ms | Allocations: 1587)
+
+
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 1119ms (Views: 1113.4ms | ActiveRecord: 5.3ms | Allocations: 3244)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:09:59 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:09:59 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 6.3ms | Allocations: 4183)
+
+
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.7ms | Allocations: 4183)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:09:59 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 24.4ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:10:04 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:10:04 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:10:04 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 2176)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 3.8ms | Allocations: 4565)
+
+
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 24ms (Views: 7.9ms | ActiveRecord: 15.9ms | Allocations: 5458)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:10:17 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:10:17 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:10:17 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 39ms (Views: 0.5ms | ActiveRecord: 2.7ms | Allocations: 2655)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 45ms (Views: 39.5ms | ActiveRecord: 4.8ms | Allocations: 4414)
+
+
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 55ms (Views: 42.3ms | ActiveRecord: 12.3ms | Allocations: 6066)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:10:30 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:10:30 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:10:30 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (59.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (33.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (138.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 33.1ms | Allocations: 1680)
+
+
+Completed 200 OK in 206ms (Views: 7.6ms | ActiveRecord: 198.0ms | Allocations: 3864)
+
+
+  [1m[36mPost Load (148.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 352ms (Views: 196.9ms | ActiveRecord: 154.5ms | Allocations: 5083)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:10:36 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:10:36 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:10:36 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (17.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (6.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (38.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 38.8ms | Allocations: 2675)
+
+
+  [1m[36mUser Load (54.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (52.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 80ms (Views: 20.6ms | ActiveRecord: 58.8ms | Allocations: 5265)
+
+
+Completed 200 OK in 93ms (Views: 21.0ms | ActiveRecord: 71.8ms | Allocations: 6148)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:10:43 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:10:43 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:10:43 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (7.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (27.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 44ms (Views: 7.5ms | ActiveRecord: 34.3ms | Allocations: 3040)
+
+
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (9.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 103ms (Views: 0.3ms | ActiveRecord: 12.4ms | Allocations: 3104)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 107ms (Views: 95.9ms | ActiveRecord: 10.4ms | Allocations: 4533)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:10:47 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:10:47 -0400
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:10:47 -0400
+  [1m[36mPost Load (6.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 17ms (Views: 7.6ms | ActiveRecord: 9.1ms | Allocations: 4057)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 234ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 3271)
+
+
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 239ms (Views: 232.4ms | ActiveRecord: 5.8ms | Allocations: 4774)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:11:14 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:11:14 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:11:14 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (29.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (16.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 20ms (Views: 2.1ms | ActiveRecord: 15.1ms | Allocations: 2434)
+
+
+  [1m[36mUser Load (262.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (266.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 731ms (Views: 439.3ms | ActiveRecord: 291.9ms | Allocations: 5700)
+
+
+Completed 200 OK in 718ms (Views: 435.2ms | ActiveRecord: 282.2ms | Allocations: 5413)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:11:51 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:11:51 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:11:51 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:11:51 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (14.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (13.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (12.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 5.1ms | ActiveRecord: 22.1ms | Allocations: 4781)
+
+
+Completed 200 OK in 177ms (Views: 159.7ms | ActiveRecord: 17.2ms | Allocations: 5198)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 182ms (Views: 162.9ms | ActiveRecord: 19.1ms | Allocations: 6846)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 7.3ms | Allocations: 1032)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:11:55 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:11:55 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (3.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 3.7ms | Allocations: 2148)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (12.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 21ms (Views: 4.7ms | ActiveRecord: 16.4ms | Allocations: 2131)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:11:58 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.3ms | Allocations: 2131)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:11:58 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 1.1ms | Allocations: 2131)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:13:11 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:13:11 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (5.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.9ms | Allocations: 2268)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (242.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 253ms (Views: 5.6ms | ActiveRecord: 247.0ms | Allocations: 4423)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:32:11 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:32:11 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:32:11 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (185.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 197ms (Views: 8.8ms | ActiveRecord: 187.8ms | Allocations: 5936)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 32ms (Views: 1.2ms | ActiveRecord: 15.6ms | Allocations: 6084)
+
+
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 32ms (Views: 17.6ms | ActiveRecord: 14.2ms | Allocations: 5752)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 21:34:59 -0400
+Started GET "/posts" for ::1 at 2020-04-13 21:34:59 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 21:34:59 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (25.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (53.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 64ms (Views: 6.2ms | ActiveRecord: 57.4ms | Allocations: 3914)
+
+
+  [1m[36mUser Load (62.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 66ms (Views: 0.6ms | ActiveRecord: 62.9ms | Allocations: 3224)
+
+
+  [1m[36mUser Load (78.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 109ms (Views: 5.5ms | ActiveRecord: 103.2ms | Allocations: 5959)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:06:41 -0400
+Started GET "/posts" for ::1 at 2020-04-13 22:06:41 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:06:41 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 44ms (Views: 13.0ms | ActiveRecord: 31.1ms | Allocations: 2237)
+
+
+  [1m[36mPost Load (116.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 129ms (Views: 0.6ms | ActiveRecord: 120.9ms | Allocations: 6506)
+
+
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 137ms (Views: 7.5ms | ActiveRecord: 128.7ms | Allocations: 7457)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:07:25 -0400
+Started GET "/posts" for ::1 at 2020-04-13 22:07:25 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:07:25 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 5.6ms | Allocations: 2669)
+
+
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 23ms (Views: 9.1ms | ActiveRecord: 14.1ms | Allocations: 5166)
+
+
+Completed 200 OK in 26ms (Views: 10.3ms | ActiveRecord: 15.1ms | Allocations: 5844)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:07:36 -0400
+Processing by PostsController#index as HTML
+Started GET "/posts" for ::1 at 2020-04-13 22:07:36 -0400
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by PostsController#index as HTML
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 4.8ms | Allocations: 2787)
+
+
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 18ms (Views: 4.3ms | ActiveRecord: 12.9ms | Allocations: 2351)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:07:36 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 941)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:09:28 -0400
+Started GET "/posts" for ::1 at 2020-04-13 22:09:28 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:09:28 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (44.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (145.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 196ms (Views: 5.2ms | ActiveRecord: 189.9ms | Allocations: 2608)
+
+
+  [1m[36mUser Load (220.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 225ms (Views: 0.4ms | ActiveRecord: 220.6ms | Allocations: 3340)
+
+
+  [1m[36mPost Load (220.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (26.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 255ms (Views: 6.2ms | ActiveRecord: 247.5ms | Allocations: 5458)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:09:34 -0400
+Started GET "/posts" for ::1 at 2020-04-13 22:09:34 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:09:34 -0400
+  [1m[36mPost Load (7.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (7.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 7.3ms | ActiveRecord: 10.6ms | Allocations: 4373)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 10.7ms | Allocations: 5194)
+
+
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 4.8ms | Allocations: 3027)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:09:58 -0400
+Started GET "/posts" for ::1 at 2020-04-13 22:09:58 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:09:58 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (16.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (17.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 43ms (Views: 9.0ms | ActiveRecord: 34.0ms | Allocations: 3040)
+
+
+  [1m[36mPost Load (10.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 12.9ms | Allocations: 3928)
+
+
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 12.9ms | Allocations: 4844)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:12:21 -0400
+Started GET "/posts" for ::1 at 2020-04-13 22:12:21 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:12:21 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (6.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (15.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 30ms (Views: 6.8ms | ActiveRecord: 21.6ms | Allocations: 3064)
+
+
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 5.1ms | Allocations: 2978)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (152.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 175ms (Views: 17.0ms | ActiveRecord: 157.5ms | Allocations: 5067)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:13:23 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:13:23 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 1084)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 2.0ms | Allocations: 3175)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:13:26 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.9ms | Allocations: 2160)
+
+
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:13:26 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started POST "/posts" for ::1 at 2020-04-13 22:14:28 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"khkjjljlkjlkn/lm ", "link_to_product"=>"https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w", "image_link"=>"https://www.windwardbeauty.com/gift-set/the-bundle", "product_name"=>"The Bundle Soap"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "link_to_product", "image_link", "product_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["caption", "khkjjljlkjlkn/lm "], ["link_to_product", "https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w"], ["image_link", "https://www.windwardbeauty.com/gift-set/the-bundle"], ["product_name", "The Bundle Soap"], ["user_id", 1], ["created_at", "2020-04-14 02:14:28.829526"], ["updated_at", "2020-04-14 02:14:28.829526"]]
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+Completed 201 Created in 49ms (Views: 3.3ms | ActiveRecord: 14.7ms | Allocations: 5606)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:14:34 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 6.3ms | Allocations: 3332)
+
+
+Started PUT "/posts/2" for ::1 at 2020-04-13 22:15:05 -0400
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"id"=>2, "caption"=>"khkjjljlkjlkn/lm ", "link_to_product"=>"https:/https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w/images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w", "image_link"=>"https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w", "product_name"=>"The Bundle Soap", "user_id"=>1, "created_at"=>"2020-04-14T02:14:28.829Z", "updated_at"=>"2020-04-14T02:14:28.829Z", "user"=>{"id"=>1, "username"=>"ReginaClarke", "email"=>"Regina.R.Clarke@gmail.com", "password_digest"=>"[FILTERED]", "industry"=>"Fashion", "business_website"=>"www.123.com", "first_name"=>"Regina", "last_name"=>"Clarke", "b2b_b2c_c2c"=>nil, "user_type"=>"personal", "created_at"=>"2020-04-13T23:47:04.063Z", "updated_at"=>"2020-04-13T23:47:04.063Z"}}, "id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :user[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+  [1m[36mPost Update (2.2ms)[0m  [1m[33mUPDATE "posts" SET "link_to_product" = $1, "image_link" = $2, "updated_at" = $3 WHERE "posts"."id" = $4[0m  [["link_to_product", "https:/https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w/images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w"], ["image_link", "https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w"], ["updated_at", "2020-04-14 02:15:05.988575"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+Completed 200 OK in 31ms (Views: 0.5ms | ActiveRecord: 4.6ms | Allocations: 4925)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:34:45 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-13 22:34:45 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (14.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 2047)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 35ms (Views: 16.9ms | ActiveRecord: 18.0ms | Allocations: 4733)
+
+
+Started GET "/posts" for ::1 at 2020-04-13 22:41:25 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 2.2ms | Allocations: 3439)
+
+
+Started POST "/posts" for ::1 at 2020-04-14 09:19:04 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"id"=>2, "caption"=>"THE AWAKENING: EUCALYPTUS + LEMON + ROSEMARY", "link_to_product"=>"https:/https://https://www.windwardbeauty.com/single-bar-soap/the-awakeningimages.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w/images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w", "image_link"=>"https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542506691984-IGWUDSGUXGOJDDQCR19U/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/CBAE5D84-7A63-4838-BC3D-3AFAAB9BBBE0?format=1500w", "product_name"=>"The Awakening", "user_id"=>1, "created_at"=>"2020-04-14T02:14:28.829Z", "updated_at"=>"2020-04-14T02:15:05.988Z", "user"=>{"id"=>1, "username"=>"ReginaClarke", "email"=>"Regina.R.Clarke@gmail.com", "password_digest"=>"[FILTERED]", "industry"=>"Fashion", "business_website"=>"www.123.com", "first_name"=>"Regina", "last_name"=>"Clarke", "b2b_b2c_c2c"=>nil, "user_type"=>"personal", "created_at"=>"2020-04-13T23:47:04.063Z", "updated_at"=>"2020-04-13T23:47:04.063Z"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "link_to_product", "image_link", "product_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["caption", "THE AWAKENING: EUCALYPTUS + LEMON + ROSEMARY"], ["link_to_product", "https:/https://https://www.windwardbeauty.com/single-bar-soap/the-awakeningimages.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w/images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542504475679-36PU2KCGYZD7ELPTHWFA/ke17ZwdGBToddI8pDm48kHTuDN_wuMCEtcRjitukjt17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeDTqIBnvYncbENjvjIwhANA9iwqjh4NTuPyM8ojl3LIchW0IciCMhegZdFltqY0OA/0DFFE9AB-72F8-47DB-9173-506917AEF4D2?format=1500w"], ["image_link", "https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542506691984-IGWUDSGUXGOJDDQCR19U/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/CBAE5D84-7A63-4838-BC3D-3AFAAB9BBBE0?format=1500w"], ["product_name", "The Awakening"], ["user_id", 1], ["created_at", "2020-04-14 13:19:04.864294"], ["updated_at", "2020-04-14 13:19:04.864294"]]
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+Completed 201 Created in 43ms (Views: 3.5ms | ActiveRecord: 10.5ms | Allocations: 3523)
+
+
+Started POST "/posts" for ::1 at 2020-04-14 09:21:01 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"caption"=>"The peppermint oils offer a true delight!  The additional ingredients add additional values such as detoxification, antioxidants, and antiviral to name a few.", "link_to_product"=>"https://www.windwardbeauty.com/single-bar-soap/the-compound-charcoal-more", "image_link"=>"https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1577767653945-CWB0PTFASN7STXF9ZPS0/ke17ZwdGBToddI8pDm48kFVLZvLBdE-d1IyYFxRbMCl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UXuMBqnGA4zDIm6XK3pYGveve9-PDnJJ6DxEOe-xmB9IRrZkNvCHU_SL75OklhLncA/IMG_2912.jpg?format=1500w", "product_name"=>"Peppermint"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[36mPost Create (8.5ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "link_to_product", "image_link", "product_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["caption", "The peppermint oils offer a true delight!  The additional ingredients add additional values such as detoxification, antioxidants, and antiviral to name a few."], ["link_to_product", "https://www.windwardbeauty.com/single-bar-soap/the-compound-charcoal-more"], ["image_link", "https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1577767653945-CWB0PTFASN7STXF9ZPS0/ke17ZwdGBToddI8pDm48kFVLZvLBdE-d1IyYFxRbMCl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UXuMBqnGA4zDIm6XK3pYGveve9-PDnJJ6DxEOe-xmB9IRrZkNvCHU_SL75OklhLncA/IMG_2912.jpg?format=1500w"], ["product_name", "Peppermint"], ["user_id", 1], ["created_at", "2020-04-14 13:21:01.151955"], ["updated_at", "2020-04-14 13:21:01.151955"]]
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:21:in `create'
+Completed 201 Created in 26ms (Views: 0.8ms | ActiveRecord: 14.4ms | Allocations: 3340)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 09:22:10 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.7ms | Allocations: 5750)
+
+
+Started PUT "/posts/1" for ::1 at 2020-04-14 09:22:40 -0400
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"id"=>1, "caption"=>"not random text", "link_to_product"=>"https://www.windwardbeauty.com/single-bar-soap/the-garden-rose-lavender", "image_link"=>"https://images.squarespace-cdn.com/content/v1/5becde519d5abb8b46d4a7be/1542507881982-YZCJNZNP3ALAJXFX7XRQ/ke17ZwdGBToddI8pDm48kH7bcx_p807l_7aJvGUB_uN7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ivq7Q1ckvJa8MA8qNUlEOb5ayIfISEBZb_L8CfvGEaIB8YD9SEW32zUFrGfM3H_Sw/A43AFC07-2A48-413E-9875-450E142953F0?format=1500w", "product_name"=>"The Spice", "user_id"=>1, "created_at"=>"2020-04-13T23:48:25.579Z", "updated_at"=>"2020-04-13T23:48:25.579Z", "user"=>{"id"=>1, "username"=>"ReginaClarke", "email"=>"Regina.R.Clarke@gmail.com", "password_digest"=>"[FILTERED]", "industry"=>"Fashion", "business_website"=>"www.123.com", "first_name"=>"Regina", "last_name"=>"Clarke", "b2b_b2c_c2c"=>nil, "user_type"=>"personal", "created_at"=>"2020-04-13T23:47:04.063Z", "updated_at"=>"2020-04-13T23:47:04.063Z"}}, "id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :user[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+  [1m[36mPost Update (0.7ms)[0m  [1m[33mUPDATE "posts" SET "caption" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["caption", "not random text"], ["updated_at", "2020-04-14 13:22:40.821381"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:30:in `update'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 3.5ms | Allocations: 4747)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 09:23:01 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 3.1ms | Allocations: 5733)
+
+
+Started DELETE "/posts/4" for ::1 at 2020-04-14 09:23:02 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46:in `set_post'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `destroy'
+  [1m[36mPost Destroy (11.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/posts_controller.rb:39:in `destroy'
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `destroy'
+Completed 204 No Content in 26ms (ActiveRecord: 16.1ms | Allocations: 2962)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 09:23:51 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 09:23:51 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 2.4ms | Allocations: 4538)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 1029)
+
+
+Started POST "/auth/login" for ::1 at 2020-04-14 09:37:22 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 272ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1346)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 09:37:32 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 1.9ms | Allocations: 4550)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 09:38:06 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.1ms | Allocations: 4531)
+
+
+Started POST "/auth/login" for ::1 at 2020-04-14 09:39:51 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}, "authentication"=>{"auth"=>{"username"=>"ReginaClarke", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ReginaClarke"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 265ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 09:40:18 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 4.9ms | Allocations: 4531)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:01:42 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:01:42 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 96ms (Views: 0.3ms | ActiveRecord: 76.3ms | Allocations: 2154)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (19.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:01:44 -0400
+Started GET "/posts" for ::1 at 2020-04-14 10:01:44 -0400
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 810ms (Views: 774.6ms | ActiveRecord: 34.8ms | Allocations: 5358)
+
+
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (14.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 14.0ms | Allocations: 1833)
+
+
+  [1m[36mUser Load (28.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 54ms (Views: 10.7ms | ActiveRecord: 42.6ms | Allocations: 6043)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:01:44 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 4531)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:01:57 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:01:57 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (51.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 2558)
+
+
+Completed 200 OK in 72ms (Views: 18.9ms | ActiveRecord: 52.6ms | Allocations: 5838)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:01:57 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (68.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 116ms (Views: 47.3ms | ActiveRecord: 68.9ms | Allocations: 4531)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:02:22 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:02:22 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (49.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 177ms (Views: 126.9ms | ActiveRecord: 50.1ms | Allocations: 5014)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:02:22 -0400
+  [1m[36mUser Load (220.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 239ms (Views: 2.6ms | ActiveRecord: 220.1ms | Allocations: 3855)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (17.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (83.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 140ms (Views: 38.8ms | ActiveRecord: 100.7ms | Allocations: 4535)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:02:25 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:02:25 -0400
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (110.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 495ms (Views: 0.4ms | ActiveRecord: 110.1ms | Allocations: 1597)
+
+
+Completed 200 OK in 537ms (Views: 534.5ms | ActiveRecord: 1.6ms | Allocations: 6197)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:02:25 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 89ms (Views: 86.5ms | ActiveRecord: 0.8ms | Allocations: 4540)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:05:40 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.8ms | Allocations: 4531)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:06:14 -0400
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:06:14 -0400
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (42.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 5.1ms | Allocations: 3671)
+
+
+Completed 200 OK in 61ms (Views: 17.2ms | ActiveRecord: 42.9ms | Allocations: 5874)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:06:14 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 5.4ms | Allocations: 4531)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:07:40 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:07:40 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 16.5ms | Allocations: 1213)
+
+
+  [1m[36mUser Load (70.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 91ms (Views: 17.8ms | ActiveRecord: 72.8ms | Allocations: 6065)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:07:40 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (140.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 162ms (Views: 11.3ms | ActiveRecord: 150.1ms | Allocations: 4540)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:16:45 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:16:45 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 47ms (Views: 1.2ms | ActiveRecord: 23.1ms | Allocations: 1577)
+
+
+  [1m[36mPost Load (25.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 77ms (Views: 36.8ms | ActiveRecord: 37.7ms | Allocations: 5735)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:17:12 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:17:12 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 1086)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 69ms (Views: 60.9ms | ActiveRecord: 7.3ms | Allocations: 5595)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:18:11 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (50.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 67ms (Views: 15.4ms | ActiveRecord: 51.1ms | Allocations: 4531)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:18:22 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (22.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 44ms (Views: 17.4ms | ActiveRecord: 26.7ms | Allocations: 4532)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:24:41 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:24:41 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (11.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 127.5ms | Allocations: 3709)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 72ms (Views: 43.5ms | ActiveRecord: 27.6ms | Allocations: 5767)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:28:06 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:28:06 -0400
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.9ms | Allocations: 1868)
+
+
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 215ms (Views: 212.1ms | ActiveRecord: 2.7ms | Allocations: 5743)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:28:11 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:28:11 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (91.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 118ms (Views: 16.3ms | ActiveRecord: 101.2ms | Allocations: 5014)
+
+
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 122ms (Views: 0.5ms | ActiveRecord: 18.2ms | Allocations: 2587)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:34:59 -0400
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:34:59 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 43ms (Views: 15.2ms | ActiveRecord: 27.4ms | Allocations: 5761)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 85ms (Views: 0.6ms | ActiveRecord: 10.0ms | Allocations: 1029)
+
+
+Started GET "/posts" for ::1 at 2020-04-14 10:35:28 -0400
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-04-14 10:35:28 -0400
+  [1m[36mPost Load (11.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (27.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authorize_request'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 27.8ms | Allocations: 942)
+
+
+  [1m[36mUser Load (31.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 79ms (Views: 35.7ms | ActiveRecord: 43.0ms | Allocations: 6550)
+
+
