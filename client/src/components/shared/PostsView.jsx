@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Search = ({ onChange, onSubmit, name, value }) => {
   return (
@@ -22,20 +22,16 @@ const Search = ({ onChange, onSubmit, name, value }) => {
 function PostsView(props) {
   return (
     <>
+      <h3>Explorer</h3>
+
       <Search />
+      {/* Convert Search component to dropdown based on API Call focused on Industry */}
+
       <div className="post-container">
         {props.posts.map((post) => (
           <div>
             <Link to={`/posts/${post.id}`}>
-              <div
-                key={post.id}
-                className="post-card"
-                onClick={(e) => {
-                  // props.history.push(`/posts/${post.id}`);
-                // <Redirect to={`/posts/${post.id}`} />;
-                //   // window.scrollTo(0, 0);
-               }}
-              >
+              <div key={post.id} className="post-card">
                 <p className="postTitle">{post.product_name}</p>
 
                 <img

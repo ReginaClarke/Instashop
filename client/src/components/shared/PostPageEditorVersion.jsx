@@ -28,7 +28,16 @@ class PostPage extends Component {
     const comments =
       postComments &&
       postComments.map((comment) => {
-        return <div>{comment.caption}</div>;
+        return (
+          <div>
+            <p className="comments">
+              Posted: {new Date(`${comment.created_at}`).getMonth() + 1}/
+              {new Date(`${comment.created_at}`).getDate()}/
+              {new Date(`${comment.created_at}`).getFullYear()} :
+              {comment.caption}
+            </p>
+          </div>
+        );
       });
     return (
       <div className="post-page">
@@ -57,24 +66,28 @@ class PostPage extends Component {
             ) : (
               <>
                 <h3>{post.product_name}</h3>
+                <p className="singlepostdate">{post.user.username}</p>
+
                 <p className="singlepostdate">
                   Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
                   {new Date(`${post.created_at}`).getDate()}/
                   {new Date(`${post.created_at}`).getFullYear()}
                 </p>
+
                 <img
                   className="postpageimage"
                   src={post.image_link}
                   alt="product"
                   style={{ maxWidth: "200px", maxHeight: "200px" }}
                 />
-                <p className="singlepostview">{post.caption}</p>
+                <p className="singlepostdate">{post.caption}</p>
 
                 <a className="linktoproduct" href={post.link_to_product}>
                   Buy Here!
                 </a>
 
                 <button
+                  className="addcomment"
                   onClick={() => {
                     this.props.history.push(`/posts/${post.id}/addcomment`);
                   }}
@@ -85,6 +98,7 @@ class PostPage extends Component {
                 {this.props.currentUser.id === post.user_id ? (
                   <div>
                     <button
+                      className="addcomment"
                       onClick={() => {
                         this.setState({
                           isEdit: true,
@@ -95,16 +109,18 @@ class PostPage extends Component {
                       Edit
                     </button>
                     <button
+                      className="addcomment"
                       onClick={() => {
                         this.props.deletePost(post.id);
-                        this.props.history.push("/posts");
+                        this.props.history.push("/explorer");
                       }}
                     >
                       Delete
                     </button>
                     <button
+                      className="addcomment"
                       onClick={() => {
-                        this.props.history.push("/posts");
+                        this.props.history.push("/explorer");
                       }}
                     >
                       Cancel

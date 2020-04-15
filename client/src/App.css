@@ -1,10 +1,10 @@
-#root{
+#root {
   width: 100%;
   height: 100%;
   margin: auto;
 }
 
-html{
+html {
   width: 100%;
   height: 100%;
   margin: auto;
@@ -30,6 +30,11 @@ p {
 h1 {
   font-size: 5em;
   margin: 0.25em;
+  text-align: center;
+}
+
+h2 {
+  margin: auto;
   text-align: center;
 }
 
@@ -125,6 +130,10 @@ form {
   min-width: 50vh;
   max-width: 30vh;
   padding: 0.5em;
+  text-align: center;
+}
+.landingpageimg {
+  width: 80%;
 }
 
 .landingpagebutton {
@@ -137,8 +146,38 @@ form {
   margin: auto;
 }
 
-.landingpageimg {
-  width: 80%;
+@media (max-width: 900px) {
+  .landingpageleft {
+    min-height: 35vh;
+    min-width: 35vh;
+  }
+
+  .landingpageright {
+    min-height: 35vh;
+    margin: auto;
+    min-width: 35vh;
+  }
+
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}
+
+@media (max-width: 300px) {
+  .landingpageleft {
+    min-height: 15vh;
+    min-width: 20vh;
+    margin: auto;
+  }
+
+  .landingpageright {
+    min-height: 15vh;
+    min-width: 20vh;
+    margin: auto;
+    /* width: 100%; */
+  }
 }
 
 /* ----------------- LOGIN PAGE -------------------------- */
@@ -166,20 +205,20 @@ form {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-@media (max-width:1600px){
-  .post-container{
+@media (max-width: 1600px) {
+  .post-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (max-width:1325px){
-  .post-container{
+@media (max-width: 1325px) {
+  .post-container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width:900px){
-  .post-container{
+@media (max-width: 900px) {
+  .post-container {
     grid-template-columns: 1fr;
   }
 }
@@ -195,9 +234,7 @@ form {
   display: flexbox;
   flex-wrap: wrap;
   background-color: black;
-  /* background-image: url("https://media.giphy.com/media/Ba69W1qjNNlza/giphy.gif"); */
   background-position: center;
-  /* background-image: radial-gradient(circle, white, grey, black); */
 }
 
 .postTitle {
@@ -224,7 +261,7 @@ form {
   font-size: 0.75em;
 }
 
-.addcomment{
+.addcomment {
   display: flex;
   font-size: 1em;
 }
@@ -291,7 +328,15 @@ form {
 }
 
 .singlepostview {
-  color: #686868;
+  color: #a89595;
+}
+
+.comments {
+  border: 0.15em solid black;
+  margin: 1em auto;
+  background-color: black;
+  width: 20em;
+  color: white;
 }
 /* ----------------- SINGLE POST PAGE -------------------------- */
 /*---*/
@@ -335,10 +380,9 @@ textarea {
 /*---*/
 /*---*/
 
-
 .nav {
   text-decoration: none;
-  padding: .5em;
+  padding: 0.5em;
   background-color: black;
   color: white;
   text-align: center;
@@ -346,9 +390,8 @@ textarea {
   width: 100%;
 }
 
-
-@media (max-width:900px){
-  nav{
+@media (max-width: 900px) {
+  nav {
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;

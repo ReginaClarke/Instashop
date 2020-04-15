@@ -3,7 +3,7 @@ import axios from "axios";
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://instashop-heroku.herokuapp.com/"
-    : "http://localhost:3000"; //will need to update this to  heroku or another service upon deployment.
+    : "http://localhost:3000";
 
 const api = axios.create({
   baseURL: baseUrl,
@@ -44,11 +44,6 @@ export const readAllPosts = async () => {
   const resp = await api.get("/posts");
   return resp.data;
 };
-
-// export const readAllUserPosts = async () => {
-//   const resp = await api.get(`/users/${id}`);
-//   return resp.data;
-// };
 
 export const updatePost = async (id, data) => {
   const resp = await api.put(`/posts/${id}`, { post: data });

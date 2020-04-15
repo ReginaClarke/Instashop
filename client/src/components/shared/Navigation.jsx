@@ -8,15 +8,15 @@ const Navigation = (props) => (
         <NavLink className="nav" to="/explorer">
           Explorer
         </NavLink>
-        <NavLink className="nav" to={`users/${props.currentUser.id}/myposts`}>
+        <NavLink className="nav" to={`/users/${props.currentUser.id}/myposts`}>
           My Product List
         </NavLink>
         <NavLink className="nav" to="/create/post">
           Create Product
         </NavLink>
-        {/* <NavLink className="nav" to="/explorer">
+        <NavLink className="nav" to="/explorer">
           Search
-        </NavLink> */}
+        </NavLink>
       </nav>
     ) : null}
 

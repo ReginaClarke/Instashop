@@ -10,7 +10,6 @@ import Login from "./shared/Login";
 import Register from "./shared/Register";
 import Header from "./shared/Header";
 import CreateComment from "./shared/CreateComment";
-import EditComment from "./shared/EditComment";
 
 import {
   createPost,
@@ -135,12 +134,11 @@ class Container extends Component {
     });
   };
 
-  newComment = async (e,post_id) => {
+  newComment = async (e, post_id) => {
     e.preventDefault();
-    console.log(this.state.commentForm)
-    const postId = { post_id: post_id }
-    const postComments = this.state.commentForm
-    const comment = await createComment({...postComments,...postId});
+    const postId = { post_id: post_id };
+    const postComments = this.state.commentForm;
+    const comment = await createComment({ ...postComments, ...postId });
     this.setState((prevState) => ({
       comments: [...prevState.comments, comment],
       commentForm: {
@@ -148,6 +146,7 @@ class Container extends Component {
       },
     }));
     this.props.history.push("/explorer");
+
   };
 
   editComment = async () => {
@@ -234,7 +233,6 @@ class Container extends Component {
   };
 
   render() {
-    console.log(this.state.comments)
     return (
       <div className="App">
         <Header
@@ -317,14 +315,24 @@ class Container extends Component {
 
           <Route
             path="/posts/:id/addcomment"
-            render={(props) => (
-              <CreateComment
-                {...props}
-                handleCommentFormChange={this.handleCommentFormChange}
-                commentForm={this.state.commentForm}
-                newComment={this.newComment}
-              />
-            )}
+            // render={(props) => (
+
+            render={(props) => {
+              const { id } = props.match.params;
+              const post = this.state.posts.find(
+                (el) => el.id === parseInt(id)
+              );
+              return (
+                <CreateComment
+                  {...props}
+                  handleCommentFormChange={this.handleCommentFormChange}
+                  commentForm={this.state.commentForm}
+                  newComment={this.newComment}
+                  post={post}
+                  comments={this.state.comments}
+                />
+              );
+            }}
           />
 
           <Route
@@ -349,24 +357,6 @@ class Container extends Component {
               );
             }}
           />
-
-          <Route
-            path="/posts/:id/editcomment"
-            render={(props) => {
-              const { id } = props.match.params;
-              const comment = this.state.comments.find(
-                (el) => el.id === parseInt(id)
-              );
-              return (
-                <EditComment
-                  id={id}
-                  comment={comment}
-                  handleCommentFormChange={this.handleCommentFormChange}
-                  mountCommentEditForm={this.mountCommentEditForm}
-                  editComment={this.editComment}
-                  commentForm={this.state.commentForm}
-                  deleteComment={this.deleteComment}
-                />
               );
             }}
           />

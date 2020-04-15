@@ -1,6 +1,5 @@
 import React from "react";
 
-// This component handles our register form
 const Register = (props) => {
   return (
     <div className="auth-container">
@@ -62,7 +61,7 @@ const Register = (props) => {
           </option>
         </select>
 
-        <h2>Below is Required for Business Users</h2>
+        <h2>Below is Only Required for Business Users</h2>
 
         <select
           onChange={props.handleChange}
