@@ -1,37 +1,13 @@
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.nav {
-  text-decoration: none;
-  padding: 1em;
-  background-color: black;
-  color: white;
-  text-align: right;
-  font-weight: bold;
+html {
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 .hyperlinks {
@@ -40,34 +16,61 @@
   font-weight: bold;
 }
 
-.homepageh1 {
-  font-size: 6em;
+img {
+  display: flex;
+  margin: auto;
+}
+
+p {
   text-align: center;
+  padding: 0em;
+  margin: 0em;
 }
 
 h1 {
   font-size: 5em;
   margin: 0.25em;
+  text-align: center;
 }
 
-h3{
+h2 {
+  margin: auto;
+  text-align: center;
+}
+
+h3 {
   font-size: 3em;
   margin: 1em auto 0em auto;
+  text-align: center;
+  color: #686868;
+  font-family: cursive;
+  font-weight: lighter;
+}
+
+h4 {
+  font-size: 2em;
+  margin: 1em auto 0em auto;
+  text-align: center;
 }
 
 button {
   background-color: black;
   color: white;
+  font-weight: bold;
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
   margin: 0.5em auto;
-  padding: 0.5em;
   max-width: 40vh;
+  display: flex;
+  justify-content: center;
+  min-width: 15vh;
+  max-width: 25vh;
 }
 
 input {
   background-color: rgb(218, 218, 218);
-  color: white;
+  color: rgb(105, 105, 105);
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0.5em auto;
@@ -94,22 +97,22 @@ select {
 form {
   display: grid;
   grid-template-columns: 1fr;
-  /* width: 100%; */
   margin: auto;
 }
-
+/* ----------------- LOGIN PAGE -------------------------- */
 .landingpageleft {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 3em auto;
+  margin: 2em auto 2em auto;
   border: 0.05em solid grey;
   max-height: 65vh;
-  min-height: 85vh;
+  min-height: 65vh;
   min-width: 80vh;
   max-width: 130vh;
+  padding: 0.5em;
 }
 
 .landingpageright {
@@ -118,38 +121,296 @@ form {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 3em auto;
+  margin: 2em auto 2em auto;
   border-style: double;
   border-color: grey;
-  border-width: .25em;
-  /* border: 0.05em solid grey;
-  outline: 0.05em solid grey; */
+  border-width: 0.25em;
   max-height: 65vh;
-  min-height: 85vh;
+  min-height: 65vh;
   min-width: 50vh;
   max-width: 30vh;
+  padding: 0.5em;
+  text-align: center;
 }
-
+.landingpageimg {
+  width: 80%;
+}
 
 .landingpagebutton {
   margin: auto 1em;
 }
 
-.homepage{
-display: flex;
-flex-direction: row;
-margin: auto;
+.homepage {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
 }
 
-img{
+@media (max-width: 900px) {
+  .landingpageleft {
+    min-height: 35vh;
+    min-width: 35vh;
+  }
+
+  .landingpageright {
+    min-height: 35vh;
+    margin: auto;
+    min-width: 35vh;
+  }
+
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}
+
+@media (max-width: 300px) {
+  .landingpageleft {
+    min-height: 15vh;
+    min-width: 20vh;
+    margin: auto;
+  }
+
+  .landingpageright {
+    min-height: 15vh;
+    min-width: 20vh;
+    margin: auto;
+    /* width: 100%; */
+  }
+}
+
+/* ----------------- LOGIN PAGE -------------------------- */
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/* ----------------- EXPLORER PAGE -------------------------- */
+
+.search {
+  display: flex;
+  margin: auto;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 1600px) {
+  .post-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1325px) {
+  .post-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .post-container {
+    grid-template-columns: 1fr;
+  }
+}
+.post-card {
+  border-style: double;
+  border-color: #686868;
+  min-width: 25em;
+  max-width: 25em;
+  min-height: 25em;
+  max-height: 25em;
+  margin: 1em auto;
+  text-align: center;
+  display: flexbox;
+  flex-wrap: wrap;
+  background-color: black;
+  background-position: center;
+}
+
+.postTitle {
+  margin: 0em auto 0em;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: 2em;
+  font-family: cursive;
+}
+
+.postCaption {
+  margin: 1em auto 0.5em;
+  background-color: black;
+  color: white;
+  /* font-weight: lighter; */
+  font-size: 0.75em;
+}
+.postdate {
+  margin: 0.5em auto 0em;
+  background-color: black;
+  color: white;
+  font-weight: light;
+  font-size: 0.75em;
+}
+
+.addcomment {
+  display: flex;
+  font-size: 1em;
+}
+
+/* ----------------- EXPLORER PAGE -------------------------- */
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+
+/* ----------------- SINGLE POST PAGE -------------------------- */
+
+.post-page {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.postpageimage {
+  min-width: 50em;
+  min-height: 50em;
+}
+
+@media (min-device-width: 300px) {
+  .postpageimage {
+    min-width: 20em;
+    min-height: 20em;
+  }
+}
+
+.singlepostdate {
+  margin: 1em auto 0.5em;
+  color: grey;
+  font-weight: light;
+  font-size: 1em;
+}
+
+.linktoproduct {
+  text-align: center;
+  font-weight: bolder;
+  color: black;
+}
+
+.linktoproduct:link {
+  text-decoration: none;
+}
+
+.linktoproduct:visited {
+  color: black;
+}
+
+.linktoproduct:hover {
+  color: white;
+  background-color: black;
+}
+
+.singlepostview {
+  color: #a89595;
+}
+
+.comments {
+  border: 0.15em solid black;
+  margin: 1em auto;
+  background-color: black;
+  width: 20em;
+  color: white;
+}
+/* ----------------- SINGLE POST PAGE -------------------------- */
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/* ----------------- CREATE POST PAGE -------------------------- */
+
+textarea {
+  background-color: rgb(218, 218, 218);
+  color: rgb(105, 105, 105);
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border: 0.25 solid grey;
+  max-height: 35vh;
+  min-height: 15vh;
+  min-width: 27vh;
+  max-width: 27vh;
+  margin: auto;
+}
+/* ----------------- CREATE POST PAGE -------------------------- */
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+/*---*/
+
+.nav {
+  text-decoration: none;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
   width: 100%;
-  /* height: 70%; */
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.signOut {
+  display: flex;
+  text-align: center;
+  margin-right: 1em;
+  font-size: 0.5em;
 }
 
 header {
   width: 100%;
   position: top;
   top: 0em;
+  /* margin: 0em auto 2em auto; */
 }
 
 footer {
@@ -157,4 +418,6 @@ footer {
   position: bottom;
   bottom: 0em;
   text-align: center;
+  margin: 10em auto 0em auto;
+  padding: 0em;
 }

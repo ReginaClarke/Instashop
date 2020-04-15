@@ -2,17 +2,24 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 import PostsView from "./shared/PostsView";
-import PostPage from "./shared/PostPage";
+import MyPostsView from "./shared/MyPostsView";
+
+import PostPage from "./shared/PostPageEditorVersion";
 import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
-import LandingPage from "./shared/LandingPage";
 import Header from "./shared/Header";
+import CreateComment from "./shared/CreateComment";
+
 import {
   createPost,
   readAllPosts,
   updatePost,
   destroyPost,
+  createComment,
+  readAllComments,
+  updateComment,
+  destroyComment,
   loginUser,
   registerUser,
   verifyUser,
@@ -26,11 +33,16 @@ class Container extends Component {
       postForm: {
         caption: "",
         link_to_product: "",
+        image_link: "",
+        product_name: "",
+      },
+      comments: [],
+      commentForm: {
+        caption: "",
       },
       currentUser: null,
       authFormData: {
         username: "",
-        email: "",
         password: "",
       },
     };
@@ -38,12 +50,14 @@ class Container extends Component {
 
   async componentDidMount() {
     this.getPosts();
+    this.getComments();
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser });
     }
   }
 
+  //---------------------POSTS ------------------
   getPosts = async () => {
     const posts = await readAllPosts();
     this.setState({
@@ -59,8 +73,11 @@ class Container extends Component {
       postForm: {
         caption: "",
         link_to_product: "",
+        image_link: "",
+        product_name: "",
       },
     }));
+    this.props.history.push("/explorer");
   };
 
   editPost = async () => {
@@ -103,6 +120,74 @@ class Container extends Component {
       postForm: {
         caption: "",
         link_to_product: "",
+        image_link: "",
+        product_name: "",
+      },
+    });
+  };
+  //----------------COMMENTS--------------
+
+  getComments = async () => {
+    const comments = await readAllComments();
+    this.setState({
+      comments,
+    });
+  };
+
+  newComment = async (e, post_id) => {
+    e.preventDefault();
+    const postId = { post_id: post_id };
+    const postComments = this.state.commentForm;
+    const comment = await createComment({ ...postComments, ...postId });
+    this.setState((prevState) => ({
+      comments: [...prevState.comments, comment],
+      commentForm: {
+        caption: "",
+      },
+    }));
+    this.props.history.push("/explorer");
+
+  };
+
+  editComment = async () => {
+    const { commentForm } = this.state;
+    await updateComment(commentForm.id, commentForm);
+    this.setState((prevState) => ({
+      comments: prevState.comments.map((comment) => {
+        return comment.id === commentForm.id ? commentForm : comment;
+      }),
+    }));
+  };
+
+  deleteComment = async (id) => {
+    await destroyComment(id);
+    this.setState((prevState) => ({
+      comments: prevState.comments.filter((comment) => comment.id !== id),
+    }));
+  };
+
+  handleCommentFormChange = (e) => {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
+      commentForm: {
+        ...prevState.commentForm,
+        [name]: value,
+      },
+    }));
+  };
+
+  mountCommentEditForm = async (id) => {
+    const comments = await readAllComments();
+    const comment = comments.find((el) => el.id === parseInt(id));
+    this.setState({
+      commentForm: comment,
+    });
+  };
+
+  resetCommentForm = () => {
+    this.setState({
+      commentForm: {
+        caption: "",
       },
     });
   };
@@ -110,7 +195,7 @@ class Container extends Component {
   // -------------- AUTH ------------------
 
   handleLoginButton = () => {
-    this.props.history.push("/login");
+    this.props.history.push("/explorer");
   };
 
   handleLogin = async () => {
@@ -119,13 +204,14 @@ class Container extends Component {
       password: this.state.authFormData.password,
     });
     this.setState({ currentUser });
-    this.props.history.push("/explore")
+    this.props.history.push("/explorer");
   };
 
   handleRegister = async (e) => {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/explorer");
   };
 
   handleLogout = () => {
@@ -133,6 +219,7 @@ class Container extends Component {
     this.setState({
       currentUser: null,
     });
+    this.props.history.push("/");
   };
 
   authHandleChange = (e) => {
@@ -148,11 +235,24 @@ class Container extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path="/">
-          <LandingPage />
-        </Route>
+        <Header
+          currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
+        />
 
         <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Login
+                handleLogin={this.handleLogin}
+                handleChange={this.authHandleChange}
+                formData={this.state.authFormData}
+              />
+            )}
+          />
+
           <Route
             exact
             path="/login"
@@ -175,9 +275,10 @@ class Container extends Component {
               />
             )}
           />
+
           <Route
             exact
-            path="/posts"
+            path="/explorer"
             render={() => (
               <PostsView
                 posts={this.state.posts}
@@ -187,8 +288,22 @@ class Container extends Component {
               />
             )}
           />
+          {/* //////////////////////////////////////////// */}
+
           <Route
-            path="/new/post"
+            exact
+            path="/users/:id/myposts"
+            render={() => (
+              <MyPostsView
+                posts={this.state.posts}
+                currentUser={this.state.currentUser}
+              />
+            )}
+          />
+
+          {/* //////////////////////////////////////////// */}
+          <Route
+            path="/create/post"
             render={() => (
               <CreatePost
                 handleFormChange={this.handleFormChange}
@@ -197,6 +312,29 @@ class Container extends Component {
               />
             )}
           />
+
+          <Route
+            path="/posts/:id/addcomment"
+            // render={(props) => (
+
+            render={(props) => {
+              const { id } = props.match.params;
+              const post = this.state.posts.find(
+                (el) => el.id === parseInt(id)
+              );
+              return (
+                <CreateComment
+                  {...props}
+                  handleCommentFormChange={this.handleCommentFormChange}
+                  commentForm={this.state.commentForm}
+                  newComment={this.newComment}
+                  post={post}
+                  comments={this.state.comments}
+                />
+              );
+            }}
+          />
+
           <Route
             path="/posts/:id"
             render={(props) => {
@@ -208,12 +346,17 @@ class Container extends Component {
                 <PostPage
                   id={id}
                   post={post}
+                  comments={this.state.comments}
                   handleFormChange={this.handleFormChange}
                   mountEditForm={this.mountEditForm}
                   editPost={this.editPost}
                   postForm={this.state.postForm}
                   deletePost={this.deletePost}
+                  currentUser={this.state.currentUser}
                 />
+              );
+            }}
+          />
               );
             }}
           />

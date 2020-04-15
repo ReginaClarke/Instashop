@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, include: :user
   end
 
   # GET /posts/1
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = Post.new(post_params)
+    @post = @current_user.posts.new(post_params)  #review later for further understanding
 
     if @post.save
       render json: @post, status: :created, location: @post
@@ -48,6 +48,6 @@ class PostsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def post_params
-    params.require(:post).permit(:caption, :link_to_product, :image)
+    params.require(:post).permit(:caption, :link_to_product, :product_name, :image_link, :user_id)
   end
 end
