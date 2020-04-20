@@ -65,7 +65,7 @@ const Register = (props) => {
 
         <select
           onChange={props.handleChange}
-          name="user_type"
+          name="b2b_b2c_c2c"
           type="text"
           value={props.formData.b2b_b2c_c2c}
         >
