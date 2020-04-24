@@ -22,6 +22,7 @@ function MyPostsView(props) {
               }}
             >
               <p className="postTitle">{post.product_name}</p>
+              <p className="singlepostdate">Created By: {post.user.username}</p>
 
               <img
                 src={post.image_link}
