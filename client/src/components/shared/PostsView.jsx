@@ -48,7 +48,8 @@ function PostsView(props) {
                 alt="product"
                 style={{ maxWidth: "200px", maxHeight: "200px" }}
               />
-              <p className="postCaption">{post.caption}</p>
+              <p className="postCaption">
+                {post.caption.length <= 25 ? post.caption : post.caption.slice(0,25)}...click to see more.</p>
               <p className="postdate">
                 Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
                 {new Date(`${post.created_at}`).getDate()}/
@@ -56,7 +57,7 @@ function PostsView(props) {
               </p>
             </div>
             <button
-              className="addcomment"
+              className="addcomment explorercomments"
               onClick={() => {
                 props.history.push(`/posts/${post.id}/addcomment`);
               }}
