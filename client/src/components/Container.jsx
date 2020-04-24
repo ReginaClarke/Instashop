@@ -9,6 +9,7 @@ import CreatePost from "./shared/CreatePost";
 import Login from "./shared/Login";
 import Register from "./shared/Register";
 import Header from "./shared/Header";
+import Footer from "./shared/Footer";
 import CreateComment from "./shared/CreateComment";
 
 import {
@@ -354,6 +355,7 @@ class Container extends Component {
           />
           ); }} />
         </Switch>
+        <Footer />
       </div>
     );
   }

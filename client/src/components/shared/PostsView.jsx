@@ -25,7 +25,7 @@ const Search = ({ onChange, onSubmit, name, value }) => {
 
 function PostsView(props) {
   return (
-    <>
+    <div>
       <h3>Explorer</h3>
 
       <Search />
@@ -66,7 +66,7 @@ function PostsView(props) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
