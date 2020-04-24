@@ -410,14 +410,14 @@ header {
   width: 100%;
   position: top;
   top: 0em;
-  /* margin: 0em auto 2em auto; */
 }
 
 footer {
+  display: flexbox;
   width: 100%;
-  position: bottom;
+  position: relative;
   bottom: 0em;
   text-align: center;
-  margin: 10em auto 0em auto;
+  margin: 21em auto 0em auto;
   padding: 0em;
 }
