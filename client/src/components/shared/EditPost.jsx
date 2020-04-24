@@ -1,17 +1,22 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
+const toInputLowercase = (e) => {
+  e.target.value = ("" + e.target.value).toLowerCase();
+};
+
 function EditPost(props) {
   return (
     <div>
       <h3>Edit Post</h3>
       <form onSubmit={props.handleSubmit}>
-      <input
+        <input
           type="text"
           name="product_name"
           placeholder="Enter Product Name"
           value={props.postForm.product_name}
           onChange={props.handleFormChange}
+          onInput={toInputLowercase}
         />
 
         <input
@@ -21,6 +26,7 @@ function EditPost(props) {
           value={props.postForm.caption}
           onChange={props.handleFormChange}
         />
+
         <input
           type="text"
           name="image_link"
@@ -34,6 +40,7 @@ function EditPost(props) {
           placeholder="Enter Link to Buy"
           value={props.postForm.link_to_product}
           onChange={props.handleFormChange}
+          onInput={toInputLowercase}
         />
 
         <button>Submit Change</button>
