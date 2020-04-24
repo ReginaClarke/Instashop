@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
 
 function MyPostsView(props) {
   const userPosts =
@@ -15,29 +14,27 @@ function MyPostsView(props) {
       <div className="post-container">
         {userPosts &&
           userPosts.map((post) => (
-            <Link key={post.id} to={`/posts/${post.id}`}>
-              <div
-                key={post.id}
-                className="post-card"
-                onClick={(e) => {
-                  window.scrollTo(0, 0);
-                }}
-              >
-                <p className="postTitle">{post.product_name}</p>
+            <div
+              key={post.id}
+              className="post-card"
+              onClick={(e) => {
+                props.history.push(`/posts/${post.id}`);
+              }}
+            >
+              <p className="postTitle">{post.product_name}</p>
 
-                <img
-                  src={post.image_link}
-                  alt="product"
-                  style={{ maxWidth: "200px", maxHeight: "200px" }}
-                />
-                <p className="postCaption">{post.caption}</p>
-                <p className="postdate">
-                  Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
-                  {new Date(`${post.created_at}`).getDate()}/
-                  {new Date(`${post.created_at}`).getFullYear()}
-                </p>
-              </div>
-            </Link>
+              <img
+                src={post.image_link}
+                alt="product"
+                style={{ maxWidth: "200px", maxHeight: "200px" }}
+              />
+              <p className="postCaption">{post.caption}</p>
+              <p className="postdate">
+                Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
+                {new Date(`${post.created_at}`).getDate()}/
+                {new Date(`${post.created_at}`).getFullYear()}
+              </p>
+            </div>
           ))}
       </div>
     </>
