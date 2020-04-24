@@ -45,9 +45,15 @@ function EditPost(props) {
 
         <button>Submit Change</button>
       </form>
-      <Link to="/explorer">
-        <button>Cancel</button>
-      </Link>
+      {/* <Link to="/explorer"> */}
+      <button
+        onClick={() => {
+          props.history.push(`/explorer`);
+        }}
+      >
+        Cancel
+      </button>
+      {/* </Link> */}
     </div>
   );
 }
