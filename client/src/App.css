@@ -204,6 +204,7 @@ form {
 .post-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 1em;
 }
 
 .post-card {
@@ -211,7 +212,7 @@ form {
   border-color: #686868;
   width: 25em;
   height: 25em;
-  margin: 1em auto;
+  margin: 2em auto;
   text-align: center;
   display: flexbox;
   flex-wrap: wrap;
@@ -270,6 +271,9 @@ form {
 .addcomment {
   display: flex;
   font-size: 1em;
+}
+.explorercomments {
+  margin-bottom: 5em;
 }
 
 /* ----------------- EXPLORER PAGE -------------------------- */

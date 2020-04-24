@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const toInputLowercase = (e) => {
   e.target.value = ("" + e.target.value).toLowerCase();
@@ -19,7 +19,7 @@ function EditPost(props) {
           onInput={toInputLowercase}
         />
 
-        <input
+        <textarea
           type="text"
           name="caption"
           placeholder="Enter Caption"
@@ -45,7 +45,6 @@ function EditPost(props) {
 
         <button>Submit Change</button>
       </form>
-      {/* <Link to="/explorer"> */}
       <button
         onClick={() => {
           props.history.push(`/explorer`);
@@ -53,7 +52,6 @@ function EditPost(props) {
       >
         Cancel
       </button>
-      {/* </Link> */}
     </div>
   );
 }
