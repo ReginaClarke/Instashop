@@ -1,6 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router";
 
+const toInputLowercase = (e) => {
+  e.target.value = ("" + e.target.value).toLowerCase();
+};
+
 const Search = ({ onChange, onSubmit, name, value }) => {
   return (
     <div className="form-container">
@@ -11,6 +15,7 @@ const Search = ({ onChange, onSubmit, name, value }) => {
           name={name}
           type="text"
           placeholder="Enter Search"
+          onInput={toInputLowercase}
         />
         <button type="submit">Search</button>
       </form>

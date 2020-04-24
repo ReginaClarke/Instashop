@@ -1,6 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+const toInputLowercase = e => {
+  e.target.value = ("" + e.target.value).toLowerCase();
+};
 
 function CreatePost(props) {
   return (
@@ -14,6 +17,7 @@ function CreatePost(props) {
             name="product_name"
             value={props.postForm.product_name}
             onChange={props.handleFormChange}
+            onInput={toInputLowercase}
           />
 
           <textarea
@@ -30,6 +34,7 @@ function CreatePost(props) {
             name="image_link"
             value={props.postForm.image_link}
             onChange={props.handleFormChange}
+            onInput={toInputLowercase}
           />
 
           <input
@@ -38,6 +43,7 @@ function CreatePost(props) {
             name="link_to_product"
             value={props.postForm.link_to_product}
             onChange={props.handleFormChange}
+            onInput={toInputLowercase}
           />
           <button>Create Post</button>
         </form>
