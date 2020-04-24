@@ -29,7 +29,8 @@ class PostPage extends Component {
       postComments &&
       postComments.map((comment) => {
         return (
-          <div>
+          <div
+          key={comment.id}>
             <p className="comments">
               Posted: {new Date(`${comment.created_at}`).getMonth() + 1}/
               {new Date(`${comment.created_at}`).getDate()}/
