@@ -146,7 +146,6 @@ class Container extends Component {
       },
     }));
     this.props.history.push("/explorer");
-
   };
 
   editComment = async () => {
@@ -252,7 +251,6 @@ class Container extends Component {
               />
             )}
           />
-
           <Route
             exact
             path="/login"
@@ -275,12 +273,12 @@ class Container extends Component {
               />
             )}
           />
-
           <Route
             exact
             path="/explorer"
             render={() => (
               <PostsView
+                key={this.state.posts.id}
                 posts={this.state.posts}
                 postForm={this.state.postForm}
                 handleFormChange={this.handleFormChange}
@@ -289,18 +287,17 @@ class Container extends Component {
             )}
           />
           {/* //////////////////////////////////////////// */}
-
           <Route
             exact
             path="/users/:id/myposts"
             render={() => (
               <MyPostsView
+                key={this.state.posts.id}
                 posts={this.state.posts}
                 currentUser={this.state.currentUser}
               />
             )}
           />
-
           {/* //////////////////////////////////////////// */}
           <Route
             path="/create/post"
@@ -312,7 +309,6 @@ class Container extends Component {
               />
             )}
           />
-
           <Route
             path="/posts/:id/addcomment"
             // render={(props) => (
@@ -334,7 +330,6 @@ class Container extends Component {
               );
             }}
           />
-
           <Route
             path="/posts/:id"
             render={(props) => {
@@ -357,9 +352,7 @@ class Container extends Component {
               );
             }}
           />
-              );
-            }}
-          />
+          ); }} />
         </Switch>
       </div>
     );

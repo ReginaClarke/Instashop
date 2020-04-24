@@ -28,15 +28,15 @@ function PostsView(props) {
 
       <div className="post-container">
         {props.posts.map((post) => (
-          <div>
+          <div key={post.id}>
             <div
-              key={post.id}
               className="post-card"
               onClick={(e) => {
                 props.history.push(`/posts/${post.id}`);
               }}
             >
               <p className="postTitle">{post.product_name}</p>
+              <p className="singlepostdate">Created By: {post.user.username}</p>
 
               <img
                 src={post.image_link}
