@@ -30,10 +30,9 @@ function MyPostsView(props) {
                 style={{ maxWidth: "200px", maxHeight: "200px" }}
               />
               <p className="postCaption">
-                {post.caption.length <= 25
-                  ? post.caption
-                  : post.caption.slice(0, 25)}
-                ...click to see more.
+                {post.caption.length >= 35
+                  ? `${post.caption.slice(0, 34)} ...more. `
+                  : post.caption}
               </p>
 
               <p className="postdate">

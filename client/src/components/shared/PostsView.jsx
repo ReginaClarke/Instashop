@@ -49,7 +49,10 @@ function PostsView(props) {
                 style={{ maxWidth: "200px", maxHeight: "200px" }}
               />
               <p className="postCaption">
-                {post.caption.length <= 25 ? post.caption : post.caption.slice(0,25)}...click to see more.</p>
+                {post.caption.length >= 35
+                  ? `${post.caption.slice(0, 35)} ... more. `
+                  : post.caption}
+              </p>
               <p className="postdate">
                 Posted: {new Date(`${post.created_at}`).getMonth() + 1}/
                 {new Date(`${post.created_at}`).getDate()}/

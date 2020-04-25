@@ -91,52 +91,35 @@ My plan of action to overcome this is to scale back where necessary to ensure my
 
 ---
 
-# WORK IN PROGRESS
-
 ### Installation instructions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version: 2.6.4
 
-Things you may want to cover:
+- System dependencies
 
-* Ruby version
+- Configuration
 
-* System dependencies
+- Database creation
 
-* Configuration
+- Database initialization
 
-* Database creation
+- How to run the test suite
 
-* Database initialization
+- Services (job queues, cache servers, search engines, etc.)
 
-* How to run the test suite
+- Deployment instructions:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-(is this for the user or for the technical person?)
-
-### Helper Functions
-
-Helper functions should be generic enough that they can be reused in other applications
-
-      	| Function | Description |
-      	| --- | :---: |
-      	| Capitalize | This will capitalize the first letter in a string of text |
-
+Backend:
+  1. In root folder install Heroku
+  2. Create the URL
+- ...
 ### Code
 
-Include a brief code snippet of functionality that you are proud of an a brief description
+I loved this code snippet because it is a real life example of using the slice method.  Seeing "see more" when text is long is quite comment in our day to day life, so finding this quick solution was quite cool to see.
 
       	```
-      	function reverse(string) {
-      		// here is the code to reverse a string of text
-      	}
+        <p className="postCaption">
+          {post.caption.length >= 35 ? `${post.caption.slice(0,34)} ...more. ` : post.caption }
+        </p>
+
       	```
-
-### Issues and Resolutions
-
-Use this section to list of all major issues encountered and their resolution
