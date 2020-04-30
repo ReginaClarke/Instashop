@@ -207,6 +207,12 @@ form {
   margin-top: 1em;
 }
 
+img{
+  width: 50em;
+  height: 50em;
+  object-fit:cover;
+}
+
 .post-card {
   border-style: double;
   border-color: #686868;
@@ -302,6 +308,7 @@ form {
 .postpageimage {
   min-width: 50em;
   min-height: 50em;
+  object-fit:cover;
 }
 
 @media (min-device-width: 300px) {
