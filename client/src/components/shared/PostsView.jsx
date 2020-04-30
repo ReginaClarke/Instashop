@@ -40,7 +40,11 @@ function PostsView(props) {
                 props.history.push(`/posts/${post.id}`);
               }}
             >
-              <p className="postTitle">{post.product_name}</p>
+              <p className="postTitle">
+                {post.product_name.length >= 20
+                  ? `${post.product_name.slice(0, 20)}...  `
+                  : post.product_name}
+              </p>
               <p className="singlepostdate">Created By: {post.user.username}</p>
 
               <img
