@@ -41,8 +41,8 @@ function PostsView(props) {
               }}
             >
               <p className="postTitle">
-                {post.product_name.length >= 20
-                  ? `${post.product_name.slice(0, 20)}...  `
+                {post.product_name.length >= 14
+                  ? `${post.product_name.slice(0, 14)}...  `
                   : post.product_name}
               </p>
               <p className="singlepostdate">Created By: {post.user.username}</p>
