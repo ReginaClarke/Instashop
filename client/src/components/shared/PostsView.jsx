@@ -1,34 +1,34 @@
 import React from "react";
 import { withRouter } from "react-router";
 
-const toInputLowercase = (e) => {
-  e.target.value = ("" + e.target.value).toLowerCase();
-};
+// const toInputLowercase = (e) => {
+//   e.target.value = ("" + e.target.value).toLowerCase();
+// };
 
-const Search = ({ onChange, onSubmit, name, value }) => {
-  return (
-    <div className="form-container">
-      <form onSubmit={(e) => onSubmit(e)}>
-        <input
-          value={value}
-          onChange={(e) => onChange(e)}
-          name={name}
-          type="text"
-          placeholder="Enter Search"
-          onInput={toInputLowercase}
-        />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  );
-};
+// const Search = ({ onChange, onSubmit, name, value }) => {
+//   return (
+//     <div className="form-container">
+//       <form onSubmit={(e) => onSubmit(e)}>
+//         <input
+//           value={value}
+//           onChange={(e) => onChange(e)}
+//           name={name}
+//           type="text"
+//           placeholder="Enter Search"
+//           onInput={toInputLowercase}
+//         />
+//         <button type="submit">Search</button>
+//       </form>
+//     </div>
+//   );
+// };
 
 function PostsView(props) {
   return (
     <div>
       <h3>Explorer</h3>
 
-      <Search />
+      {/* <Search /> */}
       {/* Convert Search component to dropdown based on API Call focused on Industry */}
 
       <div className="post-container">
@@ -48,6 +48,7 @@ function PostsView(props) {
               <p className="singlepostdate">Created By: {post.user.username}</p>
 
               <img
+              className="postimg"
                 src={post.image_link}
                 alt="product"
                 style={{ maxWidth: "200px", maxHeight: "200px" }}

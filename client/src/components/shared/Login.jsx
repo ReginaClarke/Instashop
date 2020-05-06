@@ -6,7 +6,7 @@ const Login = (props) => {
     <div className="homepage">
       <div className="landingpageleft">
         <img
-          className="landingpageimg"
+          id="landingpageimg"
           src="/images/homepage.png"
           alt="user example"
         />

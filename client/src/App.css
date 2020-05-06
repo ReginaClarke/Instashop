@@ -207,7 +207,7 @@ form {
   margin-top: 1em;
 }
 
-img{
+.postimg{
   width: 50em;
   height: 50em;
   object-fit:cover;

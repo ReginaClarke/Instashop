@@ -1,14 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-const toInputLowercase = e => {
+const toInputLowercase = (e) => {
   e.target.value = ("" + e.target.value).toLowerCase();
 };
 
 function CreatePost(props) {
   return (
-
     <div className="create-form">
+      <h3>Create Post</h3>
+
       <div>
         <form onSubmit={props.newPost}>
           <input
@@ -47,6 +48,13 @@ function CreatePost(props) {
           />
           <button>Create Post</button>
         </form>
+        <button
+          onClick={() => {
+            props.resetForm();
+          }}
+        >
+          Reset Form
+        </button>
       </div>
     </div>
   );

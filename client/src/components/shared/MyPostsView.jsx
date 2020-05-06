@@ -29,6 +29,7 @@ function MyPostsView(props) {
               <p className="singlepostdate">Created By: {post.user.username}</p>
 
               <img
+                className="postimg"
                 src={post.image_link}
                 alt="product"
                 style={{ maxWidth: "200px", maxHeight: "200px" }}

@@ -304,6 +304,7 @@ class Container extends Component {
             path="/create/post"
             render={() => (
               <CreatePost
+                resetForm={this.resetForm}
                 handleFormChange={this.handleFormChange}
                 postForm={this.state.postForm}
                 newPost={this.newPost}
@@ -312,8 +313,6 @@ class Container extends Component {
           />
           <Route
             path="/posts/:id/addcomment"
-            // render={(props) => (
-
             render={(props) => {
               const { id } = props.match.params;
               const post = this.state.posts.find(
