@@ -19,7 +19,7 @@ const Register = (props) => {
           value={props.formData.password}
           onChange={props.handleChange}
         />
-
+        <p className="registercomments">Password must be at least 8 characters</p>
         <input
           name="email"
           placeholder="Enter Email"
@@ -96,7 +96,7 @@ const Register = (props) => {
           onChange={props.handleChange}
         />
         <hr />
-          <button>Register</button>
+        <button>Register</button>
       </form>
     </div>
   );

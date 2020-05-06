@@ -101,6 +101,12 @@ form {
   margin: auto;
 }
 /* ----------------- LOGIN PAGE -------------------------- */
+.registercomments{
+  padding: 0em;
+  margin-top: 0em;
+  color: grey;
+}
+
 .landingpageleft {
   display: flex;
   flex-wrap: wrap;
