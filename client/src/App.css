@@ -101,7 +101,7 @@ form {
   margin: auto;
 }
 /* ----------------- LOGIN PAGE -------------------------- */
-.registercomments{
+.registercomments {
   padding: 0em;
   margin-top: 0em;
   color: grey;
@@ -139,8 +139,9 @@ form {
   padding: 0.5em;
   text-align: center;
 }
-.landingpageimg {
-  width: 80%;
+#landingpageimg {
+  width: 90%;
+  height: 100%;
 }
 
 .landingpagebutton {
@@ -183,7 +184,6 @@ form {
     min-height: 15vh;
     min-width: 20vh;
     margin: auto;
-    /* width: 100%; */
   }
 }
 
@@ -213,10 +213,10 @@ form {
   margin-top: 1em;
 }
 
-.postimg{
+.postimg {
   width: 50em;
   height: 50em;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .post-card {
@@ -314,7 +314,7 @@ form {
 .postpageimage {
   min-width: 50em;
   min-height: 50em;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 @media (min-device-width: 300px) {

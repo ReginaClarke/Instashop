@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 
 const Register = (props) => {
   return (
@@ -98,8 +99,15 @@ const Register = (props) => {
         <hr />
         <button>Register</button>
       </form>
+      <button
+           onClick={() => {
+            props.history.push("/")
+          }}
+      >
+        Cancel
+      </button>
     </div>
   );
 };
 
-export default Register;
+export default withRouter(Register);
